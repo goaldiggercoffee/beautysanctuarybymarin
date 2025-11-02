@@ -1,0 +1,108 @@
+IMAGES NEEDED FOR BEAUTY SANCTUARY
+===================================
+
+Total: 66 service images + 1 hero background = 67 images needed
+
+HERO:
+✓ /images/hero-bg.jpg
+
+CONSULTATIONS (2 services = 4 images):
+✓ /images/services/in-person-consultation-thumb.jpg
+✓ /images/services/in-person-consultation-hero.jpg
+✓ /images/services/virtual-consultation-thumb.jpg
+✓ /images/services/virtual-consultation-hero.jpg
+
+PROMOTIONS & PACKAGES (6 services = 12 images):
+✓ /images/services/slimming-package-thumb.jpg
+✓ /images/services/slimming-package-hero.jpg
+✓ /images/services/body-pack-4-thumb.jpg
+✓ /images/services/body-pack-4-hero.jpg
+✓ /images/services/butt-lift-6-thumb.jpg
+✓ /images/services/butt-lift-6-hero.jpg
+✓ /images/services/butt-lift-8-thumb.jpg
+✓ /images/services/butt-lift-8-hero.jpg
+✓ /images/services/cryo-led-5-thumb.jpg
+✓ /images/services/cryo-led-5-hero.jpg
+✓ /images/services/cryo-rf-chin-5-thumb.jpg
+✓ /images/services/cryo-rf-chin-5-hero.jpg
+
+ANTI-AGING FACIALS (3 services = 6 images):
+✓ /images/services/cryo-eyes-lifting-thumb.jpg
+✓ /images/services/cryo-eyes-lifting-hero.jpg
+✓ /images/services/cryo-led-thumb.jpg
+✓ /images/services/cryo-led-hero.jpg
+✓ /images/services/cryotherapy-facial-thumb.jpg
+✓ /images/services/cryotherapy-facial-hero.jpg
+
+ADVANCED FACIALS (8 services = 16 images):
+✓ /images/services/crystal-healing-thumb.jpg
+✓ /images/services/crystal-healing-hero.jpg
+✓ /images/services/circadia-peel-thumb.jpg
+✓ /images/services/circadia-peel-hero.jpg
+✓ /images/services/microdermabrasion-thumb.jpg
+✓ /images/services/microdermabrasion-hero.jpg
+✓ /images/services/micropeel-thumb.jpg
+✓ /images/services/micropeel-hero.jpg
+✓ /images/services/nano-infusion-thumb.jpg
+✓ /images/services/nano-infusion-hero.jpg
+✓ /images/services/led-peel-skinscript-thumb.jpg
+✓ /images/services/led-peel-skinscript-hero.jpg
+✓ /images/services/dermalogica-exo-thumb.jpg
+✓ /images/services/dermalogica-exo-hero.jpg
+✓ /images/services/micro-nano-vitamins-thumb.jpg
+✓ /images/services/micro-nano-vitamins-hero.jpg
+
+CLASSIC FACIALS (4 services = 8 images):
+✓ /images/services/deep-facial-thumb.jpg
+✓ /images/services/deep-facial-hero.jpg
+✓ /images/services/peeling-facial-thumb.jpg
+✓ /images/services/peeling-facial-hero.jpg
+✓ /images/services/teenager-facial-thumb.jpg
+✓ /images/services/teenager-facial-hero.jpg
+✓ /images/services/bacial-enzymes-thumb.jpg
+✓ /images/services/bacial-enzymes-hero.jpg
+
+SPECIALIZED BODY TREATMENTS (5 services = 10 images):
+✓ /images/services/neck-chest-cryo-thumb.jpg
+✓ /images/services/neck-chest-cryo-hero.jpg
+✓ /images/services/back-facial-thumb.jpg
+✓ /images/services/back-facial-hero.jpg
+✓ /images/services/rf-chin-toning-thumb.jpg
+✓ /images/services/rf-chin-toning-hero.jpg
+✓ /images/services/cryo-rf-chin-thumb.jpg
+✓ /images/services/cryo-rf-chin-hero.jpg
+✓ /images/services/cryo-rf-face-thumb.jpg
+✓ /images/services/cryo-rf-face-hero.jpg
+
+BODY CONTOURING & SCULPTING (3 services = 6 images):
+✓ /images/services/body-contouring-thumb.jpg
+✓ /images/services/body-contouring-hero.jpg
+✓ /images/services/butt-lifting-thumb.jpg
+✓ /images/services/butt-lifting-hero.jpg
+✓ /images/services/cryo-body-thumb.jpg
+✓ /images/services/cryo-body-hero.jpg
+
+MASSAGE THERAPY (1 service = 2 images):
+✓ /images/services/massage-eleni-thumb.jpg
+✓ /images/services/massage-eleni-hero.jpg
+
+VIRTUAL FACE COACHING (1 service = 2 images):
+✓ /images/services/face-coaching-thumb.jpg
+✓ /images/services/face-coaching-hero.jpg
+
+BEFORE/AFTER RESULTS (Optional but recommended):
+See IMAGE_GUIDE.md for complete list of before/after images
+
+IMAGE SPECIFICATIONS:
+- Thumbnails: 600x400px (3:2 ratio)
+- Hero Images: 1200x600px (2:1 ratio)
+- Before/After: 800x800px (1:1 ratio)
+- Hero Background: 1920x1080px or larger
+- Format: JPG or WebP
+- Optimize and compress all images before uploading
+
+QUICK START:
+1. Create the folders: public/images/services and public/images/results
+2. Add images with exact filenames above
+3. Run: npm run dev
+4. View at: http://localhost:3000
