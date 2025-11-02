@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { products } from '@/data/products';
 import ProductGrid from '@/components/store/ProductGrid';
 
@@ -56,12 +56,12 @@ export default function StorePage() {
               Not sure which products are right for your skin? Schedule a consultation
               with Carmen to receive personalized product recommendations.
             </p>
-            <a
+            <Link
               href="/#services"
               className="inline-block px-8 py-4 bg-accent-primary text-dark-bg rounded-lg hover:bg-accent-hover transition-all font-semibold text-lg"
             >
               Book a Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </section>

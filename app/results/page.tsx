@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { results } from '@/data/results';
 import ResultsGallery from '@/components/results/ResultsGallery';
 
@@ -55,12 +56,12 @@ export default function ResultsPage() {
               Join our satisfied clients and experience the transformative power of
               professional beauty treatments. Book your appointment today.
             </p>
-            <a
+            <Link
               href="/#services"
               className="inline-block px-8 py-4 bg-accent-primary text-dark-bg rounded-lg hover:bg-accent-hover transition-all font-semibold text-lg"
             >
               Explore Services
-            </a>
+            </Link>
           </div>
         </div>
       </section>

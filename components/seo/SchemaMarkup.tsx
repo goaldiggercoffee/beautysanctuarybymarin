@@ -1,12 +1,28 @@
 'use client';
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface SchemaData {
+  items?: BreadcrumbItem[];
+  faqs?: FAQ[];
+  [key: string]: unknown;
+}
+
 interface SchemaMarkupProps {
   type: 'LocalBusiness' | 'Service' | 'Organization' | 'BreadcrumbList' | 'FAQPage';
-  data: any;
+  data: SchemaData;
 }
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
-  let schema: any = {};
+  let schema: Record<string, unknown> = {};
 
   switch (type) {
     case 'LocalBusiness':
@@ -229,7 +245,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
       schema = {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        itemListElement: data.items.map((item: any, index: number) => ({
+        itemListElement: data.items?.map((item, index: number) => ({
           '@type': 'ListItem',
           position: index + 1,
           name: item.name,
@@ -242,7 +258,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
       schema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: data.faqs.map((faq: any) => ({
+        mainEntity: data.faqs?.map((faq) => ({
           '@type': 'Question',
           name: faq.question,
           acceptedAnswer: {

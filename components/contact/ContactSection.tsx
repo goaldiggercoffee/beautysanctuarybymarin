@@ -9,7 +9,7 @@ const ContactSection = () => {
           </h2>
           <p className="text-lg text-light-secondary max-w-3xl">
             Ready to start your transformation? Contact us today to book your consultation
-            or ask any questions. We're here to help you look and feel your best.
+            or ask any questions. We&apos;re here to help you look and feel your best.
           </p>
         </div>
 
