@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/home/Hero';
+import SeasonalPromotions from '@/components/promotions/SeasonalPromotions';
 import NetflixRow from '@/components/netflix/NetflixRow';
 import ServiceAreas from '@/components/home/ServiceAreas';
 import ContactSection from '@/components/contact/ContactSection';
@@ -36,6 +37,9 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Seasonal Promotions */}
+      <SeasonalPromotions />
+
       {/* Netflix-style Service Rows - DARK THEME */}
       <div id="services" className="bg-dark-bg">
         {/* 1. CONSULTATIONS */}
@@ -45,7 +49,9 @@ export default function Home() {
         {promotions && <NetflixRow category={promotions} />}
 
         {/* 3. ANTI-AGING FACIALS */}
-        {antiAging && <NetflixRow category={antiAging} />}
+        <div id="anti-aging-facials">
+          {antiAging && <NetflixRow category={antiAging} />}
+        </div>
 
         {/* 4. ADVANCED FACIALS */}
         {advancedFacials && <NetflixRow category={advancedFacials} />}

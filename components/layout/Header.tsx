@@ -31,7 +31,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-[52px] left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-dark-bg/95 backdrop-blur-md border-b border-dark-border shadow-2xl'
           : 'bg-dark-bg/80 backdrop-blur-sm'
@@ -73,13 +73,13 @@ const Header = () => {
           {/* Spacer to push Book Now to the right */}
           <div className="flex-1 hidden lg:block" />
 
-          {/* Book Now Button - FAR RIGHT */}
+          {/* Browse Services Button - FAR RIGHT */}
           <div className="hidden lg:flex items-center flex-shrink-0">
             <Link
               href="/#services"
               className="px-6 py-2.5 bg-accent-primary text-gray-900 rounded-lg hover:bg-accent-hover transition-all hover:shadow-lg hover:shadow-accent-primary/20 font-semibold"
             >
-              Book Now
+              Browse Services
             </Link>
           </div>
 
@@ -135,7 +135,7 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block mx-4 mt-4 px-6 py-3 bg-accent-primary text-gray-900 text-center rounded-lg hover:bg-accent-hover transition-colors font-semibold"
                 >
-                  Book Now
+                  Browse Services
                 </Link>
               </div>
             </motion.div>

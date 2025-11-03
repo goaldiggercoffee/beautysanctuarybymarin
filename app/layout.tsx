@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PromoBanner from "@/components/promotions/PromoBanner";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
@@ -44,8 +45,9 @@ export default function RootLayout({
         <SchemaMarkup type="Organization" data={{}} />
       </head>
       <body className="antialiased">
+        <PromoBanner />
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-[132px]">
           {children}
         </main>
         <Footer />

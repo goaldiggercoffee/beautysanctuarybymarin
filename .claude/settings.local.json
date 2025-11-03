@@ -1,15 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "mcp__filesystem__move_file",
-      "Bash(copy:*)",
+      "Bash(do cp \"./$file\" \"./$file%-thumb.jpg-hero.jpg\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\FlutterApps\\beauty-sanctuary\\public\\images\\services\\*-thumb.jpg'' | ForEach-Object { Copy-Item $_FullName ($_FullName -replace ''-thumb\\.jpg$'', ''-hero.jpg'') }\")",
+      "Bash(powershell -Command \"(Get-ChildItem ''C:\\FlutterApps\\beauty-sanctuary\\public\\images\\services\\*-hero.jpg'').Count\")",
+      "Bash(npm run build:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(npx tsc:*)",
       "Bash(git add:*)",
-      "Bash(del nul)",
+      "Bash(git restore:*)",
       "Bash(git commit:*)",
-      "Bash(git config:*)",
-      "Bash(git branch:*)",
-      "Bash(git remote:*)",
-      "Bash(git push:*)"
+      "Bash(git push)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate"
     ],
     "deny": [],
     "ask": []
