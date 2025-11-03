@@ -1,4 +1,5 @@
 export interface Service {
+  [key: string]: unknown;
   id: string;
   name: string;
   slug: string;
