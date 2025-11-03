@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: ServicePageProps) {
       type: 'website',
     },
     alternates: {
-      canonical: `https://beautysanctuarybycm.com/services/${service.slug}`,
+      canonical: `https://beautysanctuarybymarin.com/services/${service.slug}`,
     },
   };
 }

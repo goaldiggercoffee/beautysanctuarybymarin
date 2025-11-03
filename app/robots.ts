@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/admin/'],
       },
     ],
-    sitemap: 'https://beautysanctuarybycm.com/sitemap.xml',
-    host: 'https://beautysanctuarybycm.com',
+    sitemap: 'https://beautysanctuarybymarin.com/sitemap.xml',
+    host: 'https://beautysanctuarybymarin.com',
   };
 }

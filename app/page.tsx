@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: ['/images/hero-bg.jpg'],
   },
   alternates: {
-    canonical: 'https://beautysanctuarybycm.com',
+    canonical: 'https://beautysanctuarybymarin.com',
   },
 };
 

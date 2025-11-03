@@ -29,12 +29,12 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
       schema = {
         '@context': 'https://schema.org',
         '@type': ['BeautySalon', 'HealthAndBeautyBusiness', 'LocalBusiness'],
-        '@id': 'https://beautysanctuarybycm.com/#business',
+        '@id': 'https://beautysanctuarybymarin.com/#business',
         name: 'Beauty Sanctuary by Carmen Marin',
         alternateName: 'Beauty Sanctuary',
         description: 'Premier beauty sanctuary offering advanced facials, body contouring, massage therapy, and anti-aging treatments in Euless, TX. Serving the entire DFW metroplex including Arlington, Irving, Grand Prairie, Fort Worth, Dallas, Plano, Frisco, and surrounding areas.',
-        image: 'https://beautysanctuarybycm.com/images/hero-bg.jpg',
-        url: 'https://beautysanctuarybycm.com',
+        image: 'https://beautysanctuarybymarin.com/images/hero-bg.jpg',
+        url: 'https://beautysanctuarybymarin.com',
         telephone: '+14696649996',
         priceRange: '$$-$$$',
         address: {
@@ -199,7 +199,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
         provider: {
           '@type': 'BeautySalon',
           name: 'Beauty Sanctuary by Carmen Marin',
-          '@id': 'https://beautysanctuarybycm.com/#business',
+          '@id': 'https://beautysanctuarybymarin.com/#business',
         },
         description: data.longDescription || data.description,
         areaServed: {
@@ -214,7 +214,7 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
         offers: {
           '@type': 'Offer',
           availability: 'https://schema.org/InStock',
-          url: `https://beautysanctuarybycm.com/services/${data.slug}`,
+          url: `https://beautysanctuarybymarin.com/services/${data.slug}`,
         },
       };
       break;
@@ -223,10 +223,10 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
       schema = {
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        '@id': 'https://beautysanctuarybycm.com/#organization',
+        '@id': 'https://beautysanctuarybymarin.com/#organization',
         name: 'Beauty Sanctuary by Carmen Marin',
-        url: 'https://beautysanctuarybycm.com',
-        logo: 'https://beautysanctuarybycm.com/images/logo.png',
+        url: 'https://beautysanctuarybymarin.com',
+        logo: 'https://beautysanctuarybymarin.com/images/logo.png',
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: '+1-469-664-9996',

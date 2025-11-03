@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Beauty Sanctuary by Carmen Marin | Facials & Body Contouring | Euless, TX",
     description: "Experience luxury facials, body contouring, and massage therapy in Euless. Serving the entire DFW metroplex with advanced beauty treatments.",
-    url: "https://beautysanctuarybycm.com",
+    url: "https://beautysanctuarybymarin.com",
     siteName: "Beauty Sanctuary",
     locale: "en_US",
     type: "website",
   },
   alternates: {
-    canonical: "https://beautysanctuarybycm.com",
+    canonical: "https://beautysanctuarybymarin.com",
   },
   robots: {
     index: true,

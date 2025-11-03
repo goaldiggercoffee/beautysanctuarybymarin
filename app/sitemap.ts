@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllServices } from '@/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://beautysanctuarybycm.com';
+  const baseUrl = 'https://beautysanctuarybymarin.com';
 
   // Get all services
   const services = getAllServices();
