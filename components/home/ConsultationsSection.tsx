@@ -139,7 +139,7 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
 
                   {/* CTA Button */}
                   <BookingButton
-                    serviceSlug={service.slug}
+                    bookingUrl={service.bookingUrl}
                     serviceName={service.name}
                     size="lg"
                     fullWidth

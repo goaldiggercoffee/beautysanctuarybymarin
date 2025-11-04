@@ -1,10 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { getBookingUrl, trackBookingClick } from '@/config/booking';
 
 interface BookingButtonProps {
-  serviceSlug: string;
+  bookingUrl: string;
   serviceName: string;
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
@@ -13,7 +12,7 @@ interface BookingButtonProps {
 }
 
 const BookingButton = ({
-  serviceSlug,
+  bookingUrl,
   serviceName,
   variant = 'primary',
   size = 'md',
@@ -21,8 +20,11 @@ const BookingButton = ({
   className = '',
 }: BookingButtonProps) => {
   const handleClick = () => {
-    trackBookingClick(serviceSlug, serviceName);
-    window.open(getBookingUrl(serviceSlug), '_blank', 'noopener,noreferrer');
+    // Track booking click if analytics is set up
+    if (typeof window !== 'undefined') {
+      console.log(`Booking clicked: ${serviceName}`);
+    }
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer');
   };
 
   const baseStyles = 'font-medium rounded-full transition-all duration-300 inline-flex items-center justify-center';

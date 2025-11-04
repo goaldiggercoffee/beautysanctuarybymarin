@@ -246,7 +246,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
                   {/* Booking Button */}
                   <BookingButton
-                    serviceSlug={service.slug}
+                    bookingUrl={service.bookingUrl}
                     serviceName={service.name}
                     size="lg"
                     fullWidth
@@ -355,7 +355,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               Sanctuary.
             </p>
             <BookingButton
-              serviceSlug={service.slug}
+              bookingUrl={service.bookingUrl}
               serviceName={service.name}
               variant="outline"
               size="lg"
