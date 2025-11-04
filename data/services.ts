@@ -996,7 +996,7 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/face-coaching-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://www.vagaro.com/beautysanctuary',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7',
       },
     ],
   },

@@ -366,7 +366,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
-                href="https://www.vagaro.com/cl/f02tadZOccfhisNRmGh3TXGIbP30csmj6jWcR0BUprU="
+                href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QOHU55QBGYWRMJUZB6QLGKRP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-accent-rose text-dark-bg px-8 py-4 rounded-full font-semibold hover:bg-accent-rose/90 transition-all hover:scale-105"
@@ -374,7 +374,7 @@ export default function AboutPage() {
                 Book In-Person Consultation
               </Link>
               <Link
-                href="https://www.vagaro.com/cl/f02tadZOccfhisNRmGh3TXGIbP30csmj6jWcR0BUprU="
+                href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/TQ7J74GD4GQCBD2GXFPUYSTN"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block border-2 border-accent-rose text-accent-rose px-8 py-4 rounded-full font-semibold hover:bg-accent-rose hover:text-dark-bg transition-all hover:scale-105"

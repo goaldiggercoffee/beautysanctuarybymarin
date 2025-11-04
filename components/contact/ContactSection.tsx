@@ -124,7 +124,7 @@ const ContactSection = () => {
             Bilingual services available in English & Spanish | Servicios en Español disponibles
           </p>
           <a
-            href="https://www.vagaro.com/beautysanctuarybycarmenmarin"
+            href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-accent-rose text-dark-bg px-8 py-4 rounded-full font-semibold hover:bg-accent-rose/90 transition-all hover:scale-105 shadow-lg shadow-accent-rose/20"

@@ -20,7 +20,7 @@ const Footer = () => {
       { name: 'Store', href: '/store' },
     ],
     contact: [
-      { name: 'Book Appointment', href: 'https://www.vagaro.com/beautysanctuarybycarmenmarin' },
+      { name: 'Book Appointment', href: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7' },
       { name: 'Contact Us', href: '/#contact' },
       { name: '(469) 664-9996', href: 'tel:4696649996' },
     ],
