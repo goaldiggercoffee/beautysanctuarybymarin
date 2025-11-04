@@ -61,7 +61,7 @@ export const activePromotions: Promotion[] = [
     ],
     image: '/images/promotions/november-facial.jpg',
     ctaText: 'Book Package',
-    ctaUrl: 'https://www.vagaro.com/cl/OoDSO8cMUhN6k22Qx2x5ibMerTSBzFvDjWe0tPqbmJk=',
+    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
     promoCode: 'NOV2025',
     expiresDate: 'November 30, 2025',
     badge: 'LIMITED TIME',
