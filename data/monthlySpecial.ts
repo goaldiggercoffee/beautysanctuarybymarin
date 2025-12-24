@@ -19,22 +19,22 @@ export interface MonthlySpecial {
 
 export const currentMonthlySpecial: MonthlySpecial = {
   isActive: true,
-  month: "November",
-  year: 2024,
-  title: "November Beauty Boost",
-  subtitle: "Get Ready for the Holidays",
-  description: "Prepare your skin for the holiday season with our exclusive November special! Get 20% off all body contouring and anti-aging facial treatments. Look and feel your absolute best for all your holiday gatherings.",
-  discount: "20% OFF",
-  code: "NOV2024",
+  month: "Winter",
+  year: 2025,
+  title: "Winter Specials",
+  subtitle: "Celebrate the Season with Exclusive Offers",
+  description: "Embrace the beauty of winter with our special holiday promotions! From rejuvenating facials to body contouring packages, plus exclusive gift card deals. Treat yourself or someone special this season.",
+  discount: "UP TO 50% OFF",
+  code: "XMAS30",
   services: [
-    "All Body Contouring Treatments",
-    "Anti-Aging Facials",
-    "Cryotherapy Treatments",
+    "Holiday Gift Cards (Up to 50% OFF)",
+    "3 Deep Facials for $300",
+    "Butt Lifting 3 Sessions - $250",
   ],
-  image: "/images/specials/november-special.jpg", // Add this image to public/images/specials/
-  bookingUrl: "https://www.vagaro.com/beautysanctuary",
-  expirationDate: "November 30, 2024",
-  theme: "default",
+  image: "/images/specials/november-special.jpg", // Using existing winter-appropriate image
+  bookingUrl: "https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7",
+  expirationDate: "December 31, 2025",
+  theme: "holiday",
 };
 
 // Example for December (Holiday Special)

@@ -128,6 +128,23 @@ export const results: Result[] = [
     sessions: 10,
     description: 'Comprehensive body transformation'
   },
+  {
+    id: 'body-contouring-11a',
+    treatment: 'Body Slimming',
+    category: 'body-contouring',
+    image: '/images/results/body-contouring/body-slimming/back-body-slimming.jpg',
+    sessions: 6,
+    description: 'Back and torso contouring results'
+  },
+  {
+    id: 'body-contouring-11b',
+    treatment: 'Body Slimming',
+    category: 'body-contouring',
+    image: '/images/results/body-contouring/body-slimming/Front-Body-Slimming-Special.jpg',
+    sessions: 8,
+    description: 'Front body slimming transformation',
+    featured: true
+  },
 
   // Body Sculpting
   {
