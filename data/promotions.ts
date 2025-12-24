@@ -12,7 +12,7 @@ export interface BannerSettings {
 
 export const bannerSettings: BannerSettings = {
   isActive: true, // Set to false to hide banner
-  text: '🎁 Holiday Specials: Up to 50% OFF Gift Cards & More',
+  text: '🎁 Holiday Specials: Up to $50 OFF Gift Cards & More',
   ctaText: 'View Offers',
   ctaUrl: '/#seasonal-promotions',
   code: 'XMAS30 / XMAS50',
@@ -72,8 +72,8 @@ export const activePromotions: Promotion[] = [
     title: 'Holiday Gift Card Special',
     description: 'Give the gift of beauty and wellness this holiday season.',
     details: [
-      '30% OFF gift cards $125-$200 with code XMAS30',
-      '50% OFF gift cards over $200 with code XMAS50',
+      '$30 OFF gift cards $125-$200 with code XMAS30',
+      '$50 OFF gift cards over $200 with code XMAS50',
       'Perfect for friends, family, and self-care',
       'Valid for all services and treatments',
     ],

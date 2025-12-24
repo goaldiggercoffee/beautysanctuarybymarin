@@ -24,10 +24,10 @@ export const currentMonthlySpecial: MonthlySpecial = {
   title: "Winter Specials",
   subtitle: "Celebrate the Season with Exclusive Offers",
   description: "Embrace the beauty of winter with our special holiday promotions! From rejuvenating facials to body contouring packages, plus exclusive gift card deals. Treat yourself or someone special this season.",
-  discount: "UP TO 50% OFF",
+  discount: "UP TO $50 OFF",
   code: "XMAS30",
   services: [
-    "Holiday Gift Cards (Up to 50% OFF)",
+    "Holiday Gift Cards (Up to $50 OFF)",
     "3 Deep Facials for $300",
     "Butt Lifting 3 Sessions - $250",
   ],
