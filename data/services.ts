@@ -16,6 +16,7 @@ export interface Service {
   };
   bookingUrl: string;
   featured?: boolean;
+  imageFit?: 'cover' | 'contain'; // How to fit the thumbnail image in cards
 }
 
 export interface ServiceCategory {
@@ -129,31 +130,7 @@ export const serviceCategories: ServiceCategory[] = [
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/P5QI6UNWHUT3FLJBWKX7GBM3',
         featured: true,
       },
-      {
-        id: 'body-treatment-pack-4',
-        name: 'Body Treatment Pack 4',
-        slug: 'body-treatment-pack-4',
-        category: 'promotions-packages',
-        description: '4-session body treatment series',
-        longDescription: 'Experience the benefits of consistent body treatments with our 4-session package. Perfect for targeting specific areas or maintaining your results, this package offers flexibility and savings while delivering professional body contouring treatments.',
-        duration: '1 hour',
-        price: '$700',
-        benefits: [
-          'Targeted area treatment',
-          'Visible improvement',
-          'Cost-effective package',
-          'Flexible scheduling',
-          'Customized treatments',
-          'Professional guidance',
-        ],
-        images: {
-          thumbnail: '/images/services/body-pack-4-thumb.jpg',
-          hero: '/images/services/body-pack-4-hero.jpg',
-          beforeAfter: [],
-        },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/4SJDHW3CNH6NT63RZ33BUMXO',
-        featured: true,
-      },
+      // BODY TREATMENT PACK 4 - Removed December 2025, to be replaced with New Year Slimming 4 Pack in January 2026
       {
         id: 'butt-lifting-6-sessions',
         name: 'Butt Lifting 6 Sessions',

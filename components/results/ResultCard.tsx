@@ -30,7 +30,7 @@ const ResultCard = ({ result, onViewFullSize }: ResultCardProps) => {
               src={result.image}
               alt={`${result.treatment} - Before & After`}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               onError={() => setImageError(true)}
             />

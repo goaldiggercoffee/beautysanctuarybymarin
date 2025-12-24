@@ -27,7 +27,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
               src={service.images.thumbnail}
               alt={service.name}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-contain object-center transition-transform duration-500 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             {/* Overlay Content */}

@@ -42,7 +42,7 @@ export default function SeasonalPromotions() {
                   src={promo.image}
                   alt={promo.title}
                   fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
 

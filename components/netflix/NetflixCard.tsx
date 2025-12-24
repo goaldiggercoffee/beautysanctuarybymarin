@@ -37,7 +37,7 @@ const NetflixCard = ({ service, featured = false }: NetflixCardProps) => {
                 src={service.images.thumbnail}
                 alt={service.name}
                 fill
-                className="object-cover"
+                className={service.imageFit === 'cover' ? 'object-cover' : 'object-contain object-center'}
                 sizes={featured ? '500px' : '400px'}
                 onError={() => setImageError(true)}
                 priority={featured}
