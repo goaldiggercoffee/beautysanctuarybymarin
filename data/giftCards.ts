@@ -54,8 +54,8 @@ const VALENTINES_PROMO: GiftCardPromo = {
   title: "Valentine's Gift Card Special",
   description: 'Share the love with a gift of beauty and relaxation.',
   details: [
-    '$30 OFF gift cards $125-$199 with code VAL30',
-    '$50 OFF gift cards over $200 with code VAL50',
+    '$30 OFF gift cards $150-$249 with code VAL30',
+    '$50 OFF gift cards $250+ with code VAL50',
     'Perfect gift for your Valentine',
     'Valid for all services and treatments',
   ],
@@ -63,8 +63,8 @@ const VALENTINES_PROMO: GiftCardPromo = {
   promoCode: 'VAL30 / VAL50',
   badge: "VALENTINE'S DAY",
   discounts: [
-    { code: 'VAL30', amount: 30, minPurchase: 125 },
-    { code: 'VAL50', amount: 50, minPurchase: 200 },
+    { code: 'VAL30', amount: 30, minPurchase: 150 },
+    { code: 'VAL50', amount: 50, minPurchase: 250 },
   ],
 };
 
@@ -73,8 +73,8 @@ const MOTHERS_DAY_PROMO: GiftCardPromo = {
   title: "Mother's Day Gift Card Special",
   description: 'Treat Mom to the gift of relaxation and beauty.',
   details: [
-    "$30 OFF gift cards $125-$199 with code MOM30",
-    '$50 OFF gift cards over $200 with code MOM50',
+    "$30 OFF gift cards $150-$249 with code MOM30",
+    '$50 OFF gift cards $250+ with code MOM50',
     'Perfect gift for Mother\'s Day',
     'Valid for all services and treatments',
   ],
@@ -82,8 +82,8 @@ const MOTHERS_DAY_PROMO: GiftCardPromo = {
   promoCode: 'MOM30 / MOM50',
   badge: "MOTHER'S DAY",
   discounts: [
-    { code: 'MOM30', amount: 30, minPurchase: 125 },
-    { code: 'MOM50', amount: 50, minPurchase: 200 },
+    { code: 'MOM30', amount: 30, minPurchase: 150 },
+    { code: 'MOM50', amount: 50, minPurchase: 250 },
   ],
 };
 
@@ -92,8 +92,8 @@ const FATHERS_DAY_PROMO: GiftCardPromo = {
   title: "Father's Day Gift Card Special",
   description: 'Give Dad the gift of wellness and self-care.',
   details: [
-    '$30 OFF gift cards $125-$199 with code DAD30',
-    '$50 OFF gift cards over $200 with code DAD50',
+    '$30 OFF gift cards $150-$249 with code DAD30',
+    '$50 OFF gift cards $250+ with code DAD50',
     'Perfect gift for Father\'s Day',
     'Valid for all services and treatments',
   ],
@@ -101,8 +101,8 @@ const FATHERS_DAY_PROMO: GiftCardPromo = {
   promoCode: 'DAD30 / DAD50',
   badge: "FATHER'S DAY",
   discounts: [
-    { code: 'DAD30', amount: 30, minPurchase: 125 },
-    { code: 'DAD50', amount: 50, minPurchase: 200 },
+    { code: 'DAD30', amount: 30, minPurchase: 150 },
+    { code: 'DAD50', amount: 50, minPurchase: 250 },
   ],
 };
 
@@ -111,8 +111,8 @@ const CHRISTMAS_PROMO: GiftCardPromo = {
   title: 'Holiday Gift Card Special',
   description: 'Give the gift of beauty and wellness this holiday season.',
   details: [
-    '$30 OFF gift cards $125-$199 with code XMAS30',
-    '$50 OFF gift cards over $200 with code XMAS50',
+    '$30 OFF gift cards $150-$249 with code XMAS30',
+    '$50 OFF gift cards $250+ with code XMAS50',
     'Perfect for friends, family, and self-care',
     'Valid for all services and treatments',
   ],
@@ -120,8 +120,8 @@ const CHRISTMAS_PROMO: GiftCardPromo = {
   promoCode: 'XMAS30 / XMAS50',
   badge: 'HOLIDAY SPECIAL',
   discounts: [
-    { code: 'XMAS30', amount: 30, minPurchase: 125 },
-    { code: 'XMAS50', amount: 50, minPurchase: 200 },
+    { code: 'XMAS30', amount: 30, minPurchase: 150 },
+    { code: 'XMAS50', amount: 50, minPurchase: 250 },
   ],
 };
 
