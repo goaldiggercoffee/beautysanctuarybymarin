@@ -19,22 +19,22 @@ export interface MonthlySpecial {
 
 export const currentMonthlySpecial: MonthlySpecial = {
   isActive: true,
-  month: "Winter",
-  year: 2025,
-  title: "Winter Specials",
-  subtitle: "Celebrate the Season with Exclusive Offers",
-  description: "Embrace the beauty of winter with our special holiday promotions! From rejuvenating facials to body contouring packages, plus exclusive gift card deals. Treat yourself or someone special this season.",
-  discount: "UP TO $50 OFF",
-  code: "XMAS30",
+  month: "February",
+  year: 2026,
+  title: "February Self-Care Special",
+  subtitle: "Treat Yourself to Radiant Beauty",
+  description: "Embrace self-love this February with our exclusive beauty packages! From deep cleansing facials to body contouring treatments. Show yourself some love with our limited-time offers.",
+  discount: "UP TO $75 OFF",
+  code: "NOV2025",
   services: [
-    "Holiday Gift Cards (Up to $50 OFF)",
-    "3 Deep Facials for $300",
-    "Butt Lifting 3 Sessions - $250",
+    "3 Deep Facials for $300 ($75 savings)",
+    "10% off all facial upgrades",
+    "Body Contouring Packages Available",
   ],
-  image: "/images/specials/november-special.jpg", // Using existing winter-appropriate image
+  image: "/images/specials/november-special.jpg",
   bookingUrl: "https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7",
-  expirationDate: "December 31, 2025",
-  theme: "holiday",
+  expirationDate: "February 28, 2026",
+  theme: "default",
 };
 
 // Example for December (Holiday Special)

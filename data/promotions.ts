@@ -1,6 +1,8 @@
 // Seasonal Promotions Configuration
 // Update this file to change active promotions
 
+import { getCurrentGiftCardPromo, hasSpecialPromo } from './giftCards';
+
 // Banner Settings - Show promotional banner at top of site
 export interface BannerSettings {
   isActive: boolean;
@@ -10,13 +12,33 @@ export interface BannerSettings {
   code?: string; // Optional promo code to display
 }
 
-export const bannerSettings: BannerSettings = {
-  isActive: true, // Set to false to hide banner
-  text: '🎁 Holiday Specials: Up to $50 OFF Gift Cards & More',
-  ctaText: 'View Offers',
-  ctaUrl: '/#seasonal-promotions',
-  code: 'XMAS30 / XMAS50',
+// Dynamic banner settings based on current gift card promotion
+export const getBannerSettings = (): BannerSettings => {
+  const giftCardPromo = getCurrentGiftCardPromo();
+  const isSpecialMonth = hasSpecialPromo();
+
+  if (isSpecialMonth) {
+    return {
+      isActive: true,
+      text: `🎁 ${giftCardPromo.badge}: ${giftCardPromo.title}`,
+      ctaText: 'View Offers',
+      ctaUrl: '/#seasonal-promotions',
+      code: giftCardPromo.promoCode,
+    };
+  }
+
+  // Default banner for non-special months
+  return {
+    isActive: true,
+    text: '✨ Year-Round Specials: Gift Cards & Exclusive Offers',
+    ctaText: 'View Offers',
+    ctaUrl: '/#seasonal-promotions',
+    code: giftCardPromo.promoCode,
+  };
 };
+
+// Legacy export for backwards compatibility
+export const bannerSettings: BannerSettings = getBannerSettings();
 
 export interface Promotion {
   id: string;
@@ -66,24 +88,7 @@ export const activePromotions: Promotion[] = [
     expiresDate: 'November 30, 2025',
     badge: 'LIMITED TIME',
   },
-  {
-    id: 'gift-card-special',
-    isActive: true,
-    title: 'Holiday Gift Card Special',
-    description: 'Give the gift of beauty and wellness this holiday season.',
-    details: [
-      '$30 OFF gift cards $125-$200 with code XMAS30',
-      '$50 OFF gift cards over $200 with code XMAS50',
-      'Perfect for friends, family, and self-care',
-      'Valid for all services and treatments',
-    ],
-    image: '/images/promotions/gift-card-xmas.png',
-    ctaText: 'Buy Gift Cards',
-    ctaUrl: 'https://app.squareup.com/gift/TYTNS4DBTVQCP/order',
-    promoCode: 'XMAS30 / XMAS50',
-    expiresDate: 'December 26, 2025',
-    badge: 'HOLIDAY SPECIAL',
-  },
+  // Gift card promotion is now dynamically added by getActivePromotions() based on current month
   {
     id: 'butt-lifting-xmas',
     isActive: true,
@@ -125,7 +130,22 @@ export const getActivePromotions = (): Promotion[] => {
   const today = new Date();
   const newYearStart = new Date('2026-01-01');
 
-  return activePromotions.filter(promo => {
+  // Get dynamic gift card promotion
+  const giftCardPromo = getCurrentGiftCardPromo();
+  const giftCardPromotionItem: Promotion = {
+    id: 'gift-card-special',
+    isActive: true,
+    title: giftCardPromo.title,
+    description: giftCardPromo.description,
+    details: giftCardPromo.details,
+    image: giftCardPromo.image,
+    ctaText: 'Buy Gift Cards',
+    ctaUrl: 'https://app.squareup.com/gift/TYTNS4DBTVQCP/order',
+    promoCode: giftCardPromo.promoCode,
+    badge: giftCardPromo.badge,
+  };
+
+  const filteredPromotions = activePromotions.filter(promo => {
     // Auto-deactivate butt-lifting promo on or after Jan 1, 2026
     if (promo.id === 'butt-lifting-xmas' && today >= newYearStart) {
       return false;
@@ -138,4 +158,11 @@ export const getActivePromotions = (): Promotion[] => {
 
     return promo.isActive;
   });
+
+  // Insert gift card promotion at position 2 (after new-client and november-package)
+  return [
+    ...filteredPromotions.slice(0, 2),
+    giftCardPromotionItem,
+    ...filteredPromotions.slice(2),
+  ];
 };
