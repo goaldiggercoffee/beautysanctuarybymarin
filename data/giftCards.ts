@@ -54,7 +54,7 @@ const VALENTINES_PROMO: GiftCardPromo = {
   title: "Valentine's Gift Card Special",
   description: 'Share the love with a gift of beauty and relaxation.',
   details: [
-    '$30 OFF gift cards $125-$200 with code VAL30',
+    '$30 OFF gift cards $125-$199 with code VAL30',
     '$50 OFF gift cards over $200 with code VAL50',
     'Perfect gift for your Valentine',
     'Valid for all services and treatments',
@@ -73,7 +73,7 @@ const MOTHERS_DAY_PROMO: GiftCardPromo = {
   title: "Mother's Day Gift Card Special",
   description: 'Treat Mom to the gift of relaxation and beauty.',
   details: [
-    "$30 OFF gift cards $125-$200 with code MOM30",
+    "$30 OFF gift cards $125-$199 with code MOM30",
     '$50 OFF gift cards over $200 with code MOM50',
     'Perfect gift for Mother\'s Day',
     'Valid for all services and treatments',
@@ -92,7 +92,7 @@ const FATHERS_DAY_PROMO: GiftCardPromo = {
   title: "Father's Day Gift Card Special",
   description: 'Give Dad the gift of wellness and self-care.',
   details: [
-    '$30 OFF gift cards $125-$200 with code DAD30',
+    '$30 OFF gift cards $125-$199 with code DAD30',
     '$50 OFF gift cards over $200 with code DAD50',
     'Perfect gift for Father\'s Day',
     'Valid for all services and treatments',
@@ -111,7 +111,7 @@ const CHRISTMAS_PROMO: GiftCardPromo = {
   title: 'Holiday Gift Card Special',
   description: 'Give the gift of beauty and wellness this holiday season.',
   details: [
-    '$30 OFF gift cards $125-$200 with code XMAS30',
+    '$30 OFF gift cards $125-$199 with code XMAS30',
     '$50 OFF gift cards over $200 with code XMAS50',
     'Perfect for friends, family, and self-care',
     'Valid for all services and treatments',
