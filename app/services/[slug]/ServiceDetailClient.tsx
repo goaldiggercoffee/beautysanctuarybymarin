@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Service } from '@/data/services';
@@ -10,6 +11,39 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 
 interface ServiceDetailClientProps {
   service: Service;
+}
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-beige-200 last:border-0">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between py-4 text-left gap-4"
+      >
+        <span className="font-medium text-gray-900">{question}</span>
+        <svg
+          className={`w-5 h-5 text-rosegold-500 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <p className="pb-4 text-gray-600 leading-relaxed">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 }
 
 export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
@@ -82,9 +116,28 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 <h2 className="text-3xl font-serif text-gray-900 mb-6">
                   Overview
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  {service.longDescription}
-                </p>
+                <div className={service.technologies ? 'grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8' : ''}>
+                  {/* Technologies column */}
+                  {service.technologies && (
+                    <div className="bg-white rounded-xl shadow-sm p-6 h-fit">
+                      <h3 className="text-sm font-semibold text-rosegold-600 uppercase tracking-widest mb-4">
+                        Technologies Used
+                      </h3>
+                      <ul className="space-y-3">
+                        {service.technologies.map((tech, i) => (
+                          <li key={i} className="flex items-center gap-3 text-gray-700">
+                            <span className="w-2 h-2 rounded-full bg-rosegold-400 flex-shrink-0" />
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {/* Overview text */}
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {service.longDescription}
+                  </p>
+                </div>
               </motion.div>
 
               {/* Benefits */}
@@ -120,6 +173,24 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   ))}
                 </ul>
               </motion.div>
+
+              {/* FAQs */}
+              {service.faqs && service.faqs.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.35 }}
+                >
+                  <h2 className="text-3xl font-serif text-gray-900 mb-6">
+                    Frequently Asked Questions
+                  </h2>
+                  <div className="bg-white rounded-xl shadow-sm px-6 divide-y divide-beige-200">
+                    {service.faqs.map((faq, i) => (
+                      <FaqItem key={i} question={faq.question} answer={faq.answer} />
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Before/After Gallery */}
               <motion.div

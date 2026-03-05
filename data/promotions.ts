@@ -106,23 +106,6 @@ export const activePromotions: Promotion[] = [
     expiresDate: 'December 31, 2025',
     badge: 'HOLIDAY DEAL',
   },
-  {
-    id: 'new-year-slimming-2026',
-    isActive: false, // Will auto-activate on January 1, 2026
-    title: 'New Year Slimming Special',
-    description: 'Start your new year transformation with our exclusive package.',
-    details: [
-      '4 Body Contouring Sessions for $499',
-      'Save over $200 on regular pricing',
-      'Target stubborn areas and boost metabolism',
-      'Perfect for your New Year goals',
-    ],
-    image: '/images/specials/body-slimming-special-thumb.jpg',
-    ctaText: 'Start Your Journey',
-    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services', // Update with actual slimming package URL when available
-    expiresDate: 'March 31, 2026',
-    badge: 'NEW YEAR 2026',
-  },
 ];
 
 // Helper to get only active promotions with date-based activation
@@ -149,11 +132,6 @@ export const getActivePromotions = (): Promotion[] => {
     // Auto-deactivate butt-lifting promo on or after Jan 1, 2026
     if (promo.id === 'butt-lifting-xmas' && today >= newYearStart) {
       return false;
-    }
-
-    // Auto-activate New Year slimming promo on or after Jan 1, 2026
-    if (promo.id === 'new-year-slimming-2026' && today >= newYearStart) {
-      return true;
     }
 
     return promo.isActive;

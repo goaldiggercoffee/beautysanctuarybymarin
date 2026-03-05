@@ -17,6 +17,9 @@ export interface Service {
   bookingUrl: string;
   featured?: boolean;
   imageFit?: 'cover' | 'contain'; // How to fit the thumbnail image in cards
+  imagePosition?: string; // object-position for thumbnail, e.g. 'object-top', 'object-center'
+  technologies?: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface ServiceCategory {
@@ -106,31 +109,122 @@ export const serviceCategories: ServiceCategory[] = [
     layoutType: 'special',
     services: [
       {
-        id: '8-sessions-slimming',
-        name: '8 Sessions Slimming Package',
-        slug: '8-sessions-slimming',
+        id: 'body-sculpting-6-sessions',
+        name: 'Body Sculpting Program 6 Sessions',
+        slug: 'body-sculpting-6-sessions',
         category: 'promotions-packages',
-        description: 'Comprehensive slimming series for maximum results',
-        longDescription: 'Commit to your transformation with our 8-session slimming package. This comprehensive program combines advanced body contouring techniques to help you achieve significant, lasting results. Each session builds upon the last, maximizing fat reduction and body sculpting outcomes.',
-        duration: '1 hour 30 minutes',
-        price: '$1,250',
+        description: 'A focused 6-session body sculpting program to help you shape, define, and stay on track',
+        longDescription: 'Commit to your transformation with our 6-session Body Sculpting Program. This focused program combines advanced non-invasive technologies tailored to your specific goals and body areas. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
+        duration: '1 hour 30 minutes per session',
+        price: '$699',
         benefits: [
-          'Significant inch loss',
-          'Enhanced metabolism',
-          'Improved body contours',
-          'Long-lasting results',
-          'Package savings',
-          'Personalized treatment plan',
+          'Personalized initial evaluation',
+          'Custom treatment plan per session',
+          'Daily nutrition coaching',
+          'Before & after photo tracking',
+          'Ongoing support & accountability',
+          'Targets stubborn localized fat',
+          'Non-invasive — no downtime',
+        ],
+        technologies: [
+          'Cavitation',
+          'Russian Currents (EMS)',
+          'Radiofrequency Vacuum RF',
+          'Cryo — toning or slimming',
+          'Body vibration machine',
+          'Coffee ice sculpting',
+          'Hot cream slimming massage',
+        ],
+        faqs: [
+          {
+            question: 'What areas can be treated?',
+            answer: 'We can work on the abdomen, waist, back, arms, legs, and post-operative areas when appropriate. Your treatment plan is personalized based on your initial evaluation.',
+          },
+          {
+            question: 'Is there any downtime?',
+            answer: 'No — all treatments are non-invasive. You can resume your normal activities immediately after each session.',
+          },
+          {
+            question: 'How soon will I see results?',
+            answer: 'Every body responds differently. Most clients begin noticing changes within the first few sessions. Results improve significantly with consistency, proper hydration, and following the nutrition recommendations provided.',
+          },
+          {
+            question: 'What should I do to get the best results?',
+            answer: 'Drink plenty of water, follow the nutrition guidance given during your consultation, maintain habits aligned with your goals, and stay consistent with your scheduled sessions.',
+          },
+          {
+            question: 'Is this program right for me?',
+            answer: 'This program is ideal for clients who want to improve the appearance of localized fat, achieve a more defined waist or sculpted look, and who are ready to commit to a structured process with professional accountability.',
+          },
         ],
         images: {
-          thumbnail: '/images/services/slimming-package-thumb.jpg',
-          hero: '/images/services/slimming-package-hero.jpg',
+          thumbnail: '/images/services/body-contouring-working.jpeg',
+          hero: '/images/services/body-contouring-working.jpeg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/P5QI6UNWHUT3FLJBWKX7GBM3',
+        imagePosition: 'object-top',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
         featured: true,
       },
-      // BODY TREATMENT PACK 4 - Removed December 2025, to be replaced with New Year Slimming 4 Pack in January 2026
+      {
+        id: '8-sessions-slimming',
+        name: 'Body Sculpting Program 8 Sessions',
+        slug: '8-sessions-slimming',
+        category: 'promotions-packages',
+        description: 'The most complete body sculpting program — 8 sessions to commit to your transformation',
+        longDescription: 'Commit to your transformation with our 8-session Body Sculpting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant results for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
+        duration: '1 hour 30 minutes per session',
+        price: '$850',
+        benefits: [
+          'Personalized initial evaluation',
+          'Custom treatment plan per session',
+          'Daily nutrition coaching',
+          'Before & after photo tracking',
+          'Ongoing support & accountability',
+          'Maximum results with 8 sessions',
+          'Non-invasive — no downtime',
+          'Best value for committed clients',
+        ],
+        technologies: [
+          'Cavitation',
+          'Russian Currents (EMS)',
+          'Radiofrequency Vacuum RF',
+          'Cryo — toning or slimming',
+          'Body vibration machine',
+          'Coffee ice sculpting',
+          'Hot cream slimming massage',
+        ],
+        faqs: [
+          {
+            question: 'What areas can be treated?',
+            answer: 'We can work on the abdomen, waist, back, arms, legs, and post-operative areas when appropriate. Your treatment plan is personalized based on your initial evaluation.',
+          },
+          {
+            question: 'Is there any downtime?',
+            answer: 'No — all treatments are non-invasive. You can resume your normal activities immediately after each session.',
+          },
+          {
+            question: 'How soon will I see results?',
+            answer: 'Every body responds differently. Most clients begin noticing changes within the first few sessions. Results improve significantly with consistency, proper hydration, and following the nutrition recommendations provided.',
+          },
+          {
+            question: 'What should I do to get the best results?',
+            answer: 'Drink plenty of water, follow the nutrition guidance given during your consultation, maintain habits aligned with your goals, and stay consistent with your scheduled sessions.',
+          },
+          {
+            question: 'Is this program right for me?',
+            answer: 'This program is ideal for clients who want to improve the appearance of localized fat, achieve a more defined waist or sculpted look, and who are ready to fully commit to a structured process with professional accountability.',
+          },
+        ],
+        images: {
+          thumbnail: '/images/services/body-contouring-working.jpeg',
+          hero: '/images/services/body-contouring-working.jpeg',
+          beforeAfter: [],
+        },
+        imagePosition: 'object-top',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
+        featured: true,
+      },
       {
         id: 'butt-lifting-6-sessions',
         name: 'Butt Lifting 6 Sessions',

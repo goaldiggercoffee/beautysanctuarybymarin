@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/home/Hero';
+import VoyageDallasFeature from '@/components/home/VoyageDallasFeature';
 import SeasonalPromotions from '@/components/promotions/SeasonalPromotions';
 import NetflixRow from '@/components/netflix/NetflixRow';
 import ServiceAreas from '@/components/home/ServiceAreas';
@@ -36,6 +37,9 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero />
+
+      {/* Voyage Dallas Feature */}
+      <VoyageDallasFeature />
 
       {/* Seasonal Promotions */}
       <SeasonalPromotions />
