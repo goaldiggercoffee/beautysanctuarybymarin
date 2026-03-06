@@ -115,7 +115,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'promotions-packages',
         description: 'A focused 6-session body sculpting program to help you shape, define, and stay on track',
         longDescription: 'Commit to your transformation with our 6-session Body Sculpting Program. This focused program combines advanced non-invasive technologies tailored to your specific goals and body areas. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
-        duration: '1 hour 30 minutes per session',
+        duration: '45 minutes per session',
         price: '$699',
         benefits: [
           'Personalized initial evaluation',
@@ -173,7 +173,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'promotions-packages',
         description: 'The most complete body sculpting program — 8 sessions to commit to your transformation',
         longDescription: 'Commit to your transformation with our 8-session Body Sculpting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant results for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
-        duration: '1 hour 30 minutes per session',
+        duration: '45 minutes per session',
         price: '$850',
         benefits: [
           'Personalized initial evaluation',
@@ -232,7 +232,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'promotions-packages',
         description: 'A focused 6-session butt lifting program to lift, tone, and sculpt for a more defined shape',
         longDescription: 'Commit to your transformation with our 6-session Butt Lifting Program. This focused program combines targeted non-invasive technologies to lift, tone, and sculpt the glutes for a more defined and elevated appearance. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
-        duration: '1 hour per session',
+        duration: '45 minutes per session',
         price: '$699',
         benefits: [
           'Personalized initial evaluation',
@@ -288,7 +288,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'promotions-packages',
         description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt',
         longDescription: 'Commit to your transformation with our 8-session Butt Lifting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant lift and sculpting for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
-        duration: '1 hour per session',
+        duration: '45 minutes per session',
         price: '$850',
         benefits: [
           'Personalized initial evaluation',
@@ -995,7 +995,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'body-contouring-sculpting',
         description: 'Comprehensive body sculpting treatment',
         longDescription: 'Transform your body with our advanced body contouring treatment. Using state-of-the-art technology, we target stubborn fat deposits, tighten skin, and sculpt your desired silhouette. This customizable treatment can address multiple areas including abdomen, thighs, arms, and more for comprehensive body transformation.',
-        duration: '1 hour 10 minutes',
+        duration: '45 minutes',
         price: '$250',
         benefits: [
           'Targets stubborn fat',
@@ -1019,7 +1019,7 @@ export const serviceCategories: ServiceCategory[] = [
         category: 'body-contouring-sculpting',
         description: 'Single session non-invasive butt lift and sculpting',
         longDescription: 'Enhance your curves with our non-invasive butt lifting treatment. This single session uses advanced technology to lift, shape, and contour for a more sculpted, toned appearance. Perfect for trying the treatment before committing to a package or as a maintenance session.',
-        duration: '1 hour',
+        duration: '45 minutes',
         price: '$150',
         benefits: [
           'Lifts and shapes',
