@@ -3,6 +3,46 @@
 
 import { getCurrentGiftCardPromo, hasSpecialPromo } from './giftCards';
 
+// Dynamic facials package — Mother's Day in May, Membership Deal all other months
+const getCurrentFacialsPromo = (): Promotion => {
+  const month = new Date().getMonth() + 1;
+
+  if (month === 5) {
+    return {
+      id: 'facials-package',
+      isActive: true,
+      title: "Mother's Day Special: 3 Deep Facials",
+      description: "A beautiful gift for Mom — or treat yourself to some self-love. Three luxurious deep facials at a special Mother's Day price.",
+      details: [
+        '3 Deep Facials for $300',
+        'Saving $75 — Happy Mother\'s Day!',
+        'Perfect Mother\'s Day gift or self-care treat',
+        '10% off all facial upgrades',
+      ],
+      image: '/images/promotions/november-facial.jpg',
+      ctaText: 'Book Package',
+      ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
+      badge: "MOTHER'S DAY",
+    };
+  }
+
+  return {
+    id: 'facials-package',
+    isActive: true,
+    title: 'Facial Membership Deal',
+    description: 'Commit to your glow with our exclusive membership package. Three deep facials bundled for lasting results at an unbeatable members-only value.',
+    details: [
+      '3 Deep Facials for $300',
+      'Save $75 — membership pricing',
+      'Invest in your skin all year long',
+    ],
+    image: '/images/promotions/november-facial.jpg',
+    ctaText: 'Book Package',
+    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
+    badge: 'MEMBERSHIP DEAL',
+  };
+};
+
 // Banner Settings - Show promotional banner at top of site
 export interface BannerSettings {
   isActive: boolean;
@@ -71,23 +111,7 @@ export const activePromotions: Promotion[] = [
     ctaUrl: '/#anti-aging-facials',
     badge: 'NEW CLIENT',
   },
-  {
-    id: 'november-package',
-    isActive: true,
-    title: 'November Beauty Boost',
-    description: 'Get ready for the holidays with radiant, glowing skin.',
-    details: [
-      '3 Deep Facials for $300',
-      '$75 total savings',
-      '10% off all facial upgrades',
-    ],
-    image: '/images/promotions/november-facial.jpg',
-    ctaText: 'Book Package',
-    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
-    promoCode: 'NOV2025',
-    expiresDate: 'November 30, 2025',
-    badge: 'LIMITED TIME',
-  },
+  // Facials package is now dynamically added by getActivePromotions() based on current month
   // Gift card promotion is now dynamically added by getActivePromotions() based on current month
   {
     id: 'butt-lifting-xmas',
@@ -137,10 +161,11 @@ export const getActivePromotions = (): Promotion[] => {
     return promo.isActive;
   });
 
-  // Insert gift card promotion at position 2 (after new-client and november-package)
+  // Order: new-client → facials deal (dynamic) → gift card (dynamic) → remaining
   return [
-    ...filteredPromotions.slice(0, 2),
+    filteredPromotions[0],   // new-client-special
+    getCurrentFacialsPromo(),
     giftCardPromotionItem,
-    ...filteredPromotions.slice(2),
-  ];
+    ...filteredPromotions.slice(1),
+  ].filter(Boolean);
 };

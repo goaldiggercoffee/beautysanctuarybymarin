@@ -76,7 +76,7 @@ const MOTHERS_DAY_PROMO: GiftCardPromo = {
     "$30 OFF gift cards $150-$249 with code MOM30",
     '$50 OFF gift cards $250+ with code MOM50',
     'Perfect gift for Mother\'s Day',
-    'Valid for all services and treatments',
+    'Not valid on packages or programs under $600 already discounted',
   ],
   image: '/images/Gift Cards/Gift Card Black and Gold.png', // Can be updated with a Mother's Day specific image
   promoCode: 'MOM30 / MOM50',
