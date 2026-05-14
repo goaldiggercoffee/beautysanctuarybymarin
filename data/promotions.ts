@@ -101,7 +101,6 @@ export const activePromotions: Promotion[] = [
     title: 'New Client Special',
     description: 'Welcome to Beauty Sanctuary! Enjoy exclusive savings on your first visit.',
     details: [
-      '$30 OFF any service under $200',
       '$50 OFF services $200+',
       'Cannot be combined with other promotions or packages',
       'No code needed - discount applied at checkout',
