@@ -97,7 +97,7 @@ export interface Promotion {
 export const activePromotions: Promotion[] = [
   {
     id: 'new-client-special',
-    isActive: true,
+    isActive: false,
     title: 'New Client Special',
     description: 'Welcome to Beauty Sanctuary! Enjoy exclusive savings on your first visit.',
     details: [
