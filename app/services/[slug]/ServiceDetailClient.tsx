@@ -313,6 +313,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                         {service.price}
                       </span>
                     </div>
+                    <p className="text-xs text-rosegold-500 mt-1 text-right">
+                      Afterpay available — pay in parts
+                    </p>
                   </div>
 
                   {/* Booking Button */}

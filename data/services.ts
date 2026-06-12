@@ -116,7 +116,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'A focused 4-session body sculpting program to shape, define, and stay on track — save $150',
         longDescription: 'Commit to your transformation with our 4-session Body Sculpting Program. This focused program combines advanced non-invasive technologies tailored to your specific goals and body areas. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
         duration: '45 minutes per session',
-        price: '$450',
+        price: '$500',
         benefits: [
           'Save $150 — exceptional package value',
           'Personalized initial evaluation',
@@ -175,7 +175,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'The most complete body sculpting program — 8 sessions for maximum transformation, saving $350',
         longDescription: 'Commit to your transformation with our 8-session Body Sculpting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant results for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$850',
+        price: '$900',
         benefits: [
           'Save $350 — best value for committed clients',
           'Personalized initial evaluation',
@@ -234,7 +234,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'A focused 4-session butt lifting program to lift, tone, and sculpt for a more defined shape — save $150',
         longDescription: 'Commit to your transformation with our 4-session Butt Lifting Program. This focused program combines targeted non-invasive technologies to lift, tone, and sculpt the glutes for a more defined and elevated appearance. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
         duration: '45 minutes per session',
-        price: '$450',
+        price: '$500',
         benefits: [
           'Save $150 — exceptional package value',
           'Personalized initial evaluation',
@@ -291,7 +291,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt, saving $350',
         longDescription: 'Commit to your transformation with our 8-session Butt Lifting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant lift and sculpting for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$850',
+        price: '$900',
         benefits: [
           'Save $350 — best value for committed clients',
           'Personalized initial evaluation',
