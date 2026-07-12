@@ -25,6 +25,7 @@ const config: Config = {
           primary: '#E8B298',      // Rose gold/salmon (primary buttons)
           secondary: '#8B9A7E',    // Sage green (subtle highlights)
           hover: '#F0C4AE',        // Lighter rose gold for hover
+          rose: '#E8B298',         // Alias for accent-primary, used widely as text/border/bg-accent-rose
         },
         // Legacy colors for backward compatibility (now dark-themed)
         cream: {
