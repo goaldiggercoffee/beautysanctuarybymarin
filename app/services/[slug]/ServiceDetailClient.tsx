@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Service } from '@/data/services';
+import { getResultsForService } from '@/data/results';
+import { smsAbout } from '@/data/contact';
 import SimpleImageGallery from '@/components/services/SimpleImageGallery';
 import BookingButton from '@/components/ui/BookingButton';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
@@ -47,10 +49,32 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
+  // Pull the matching before/after photos out of the results gallery. These are the
+  // strongest proof we have and they belong next to the price, not only on /results.
+  const beforeAfter = service.images.beforeAfter.length
+    ? service.images.beforeAfter
+    : getResultsForService(service.slug).map((r) => r.image);
+
+  // The free consultation books by phone rather than through Square.
+  const isPhoneBooking = service.bookingUrl.startsWith('tel:');
+
   return (
     <>
       {/* Service Schema Markup */}
       <SchemaMarkup type="Service" data={service} />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={{
+          items: [
+            { name: 'Home', url: 'https://beautysanctuarybymarin.com' },
+            { name: 'Services', url: 'https://beautysanctuarybymarin.com/#services' },
+            { name: service.name, url: `https://beautysanctuarybymarin.com/services/${service.slug}` },
+          ],
+        }}
+      />
+      {service.faqs && service.faqs.length > 0 && (
+        <SchemaMarkup type="FAQPage" data={{ faqs: service.faqs }} />
+      )}
 
       <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
@@ -201,9 +225,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 <h2 className="text-3xl font-serif text-gray-900 mb-6">
                   Real Results
                 </h2>
-                {service.images.beforeAfter.length > 0 ? (
+                {beforeAfter.length > 0 ? (
                   <>
-                    <SimpleImageGallery images={service.images.beforeAfter} treatment={service.name} />
+                    <SimpleImageGallery images={beforeAfter} treatment={service.name} />
                     <div className="mt-6 text-center">
                       <Link
                         href="/results"
@@ -228,7 +252,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   </>
                 ) : (
                   <div className="text-center bg-beige-50 rounded-xl p-10">
-                    <p className="text-xl font-semibold text-gray-900 mb-6">
+                    <p className="text-xl font-semibold text-white mb-6">
                       See stunning transformations from our clients
                     </p>
                     <Link
@@ -313,9 +337,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                         {service.price}
                       </span>
                     </div>
-                    <p className="text-xs text-rosegold-500 mt-1 text-right">
-                      Afterpay available — pay in parts
-                    </p>
+                    {service.stripePaymentLink && (
+                      <p className="text-xs text-rosegold-500 mt-1 text-right">
+                        Or pay monthly with Affirm, Klarna &amp; Afterpay
+                      </p>
+                    )}
                   </div>
 
                   {/* Booking Button */}
@@ -324,15 +350,71 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     serviceName={service.name}
                     size="lg"
                     fullWidth
-                    className="mb-6"
+                    className={service.stripePaymentLink || isPhoneBooking ? 'mb-3' : 'mb-6'}
                   />
 
+                  {/* The free consultation is booked by phone, so offer texting too —
+                      plenty of people won't call a stranger but will happily text. */}
+                  {isPhoneBooking && (
+                    <div className="mb-6">
+                      <a
+                        href={smsAbout(service.name)}
+                        className="w-full inline-flex items-center justify-center px-6 py-4 rounded-full border-2 border-rosegold-500 text-rosegold-600 font-medium hover:bg-rosegold-500 hover:text-white transition-all duration-300"
+                      >
+                        <span>Text Us Instead</span>
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                          />
+                        </svg>
+                      </a>
+                      <p className="text-xs text-gray-500 mt-2 text-center">
+                        Prefer to text? We&apos;ll reply as soon as we can.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Financing — only on the multi-session programs, which are the
+                      only services with a Stripe link behind them. */}
+                  {service.stripePaymentLink && (
+                    <div className="mb-6">
+                      <a
+                        href={service.stripePaymentLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center px-6 py-4 rounded-full border-2 border-rosegold-500 text-rosegold-600 font-medium hover:bg-rosegold-500 hover:text-white transition-all duration-300"
+                      >
+                        <span>Pay Over Time</span>
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                          />
+                        </svg>
+                      </a>
+                      <p className="text-xs text-gray-500 mt-2 text-center leading-relaxed">
+                        Split {service.price} into monthly payments with{' '}
+                        <span className="font-medium text-gray-700">Affirm</span>,{' '}
+                        <span className="font-medium text-gray-700">Klarna</span>, or{' '}
+                        <span className="font-medium text-gray-700">Afterpay</span>.
+                        <br />
+                        Checking your rate won&apos;t affect your credit score.
+                      </p>
+                    </div>
+                  )}
+
                   {/* Additional Info */}
+                  {/* beige-50 is #2A2A2A in this theme (the palette was inverted for
+                      dark mode), so this panel needs light text, not text-gray-900. */}
                   <div className="bg-beige-50 rounded-xl p-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">
+                    <h4 className="font-semibold text-white mb-3">
                       What to Expect
                     </h4>
-                    <ul className="space-y-2 text-sm text-gray-600">
+                    <ul className="space-y-2 text-sm text-gray-300">
                       <li className="flex items-start">
                         <svg
                           className="w-4 h-4 mr-2 text-sage-600 flex-shrink-0 mt-0.5"

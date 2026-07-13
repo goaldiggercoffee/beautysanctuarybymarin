@@ -4,6 +4,9 @@ import { products } from '@/data/products';
 import ProductGrid from '@/components/store/ProductGrid';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/store',
+  },
   title: 'Store - Premium Skincare Products | Beauty Sanctuary',
   description: 'Shop professional-grade skincare products curated by Carmen Marin. Premium cleansers, serums, moisturizers, and specialty treatments.',
   openGraph: {

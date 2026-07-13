@@ -167,14 +167,6 @@ export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'Massage Therapy',
-                description: 'Professional therapeutic massage for relaxation and wellness',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
                 name: 'Slimming Treatments',
                 description: 'Comprehensive slimming and body sculpting packages',
               },

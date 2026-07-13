@@ -15,6 +15,15 @@ export interface Service {
     beforeAfter: string[]; // Array of combined before/after image paths
   };
   bookingUrl: string;
+  /**
+   * Stripe Payment Link for the multi-session programs. Square Appointments does
+   * not offer buy-now-pay-later at checkout, so financing runs through Stripe,
+   * where Klarna / Affirm / Afterpay are enabled. Affirm is the one that matters
+   * here: it turns a $900 program into roughly $80/month.
+   *
+   * These are plain hosted URLs — no API keys, no backend.
+   */
+  stripePaymentLink?: string;
   featured?: boolean;
   imageFit?: 'cover' | 'contain'; // How to fit the thumbnail image in cards
   imagePosition?: string; // object-position for thumbnail, e.g. 'object-top', 'object-center'
@@ -39,61 +48,34 @@ export const serviceCategories: ServiceCategory[] = [
     id: 'consultations',
     name: 'Consultations',
     slug: 'consultations',
-    description: 'Start your beauty journey with a personalized consultation. Choose in-person at our spa or virtual consultation from anywhere in the world.',
+    description: 'Start your beauty journey with a free 15-minute consultation. Call Carmen directly to talk through your goals — no charge, no commitment.',
     icon: '',
     layoutType: 'special',
     prominent: true,
     services: [
       {
-        id: 'in-person-consultation',
-        name: 'In-Person Consultation',
-        slug: 'in-person-consultation',
-        category: 'consultations',
-        description: 'Personalized face-to-face consultation at our luxury spa',
-        longDescription: 'Begin your transformation with a comprehensive in-person consultation at Beauty Sanctuary. Carmen will personally assess your skin, discuss your beauty goals, and create a customized treatment plan tailored to your unique needs. This one-on-one session includes a thorough skin analysis, product recommendations, and a roadmap to achieving your desired results. Your $30 consultation fee can be applied towards any service you book.',
-        duration: '20 minutes',
-        price: '$30',
-        benefits: [
-          'Comprehensive skin analysis',
-          'Personalized treatment planning',
-          'Product recommendations',
-          'Hands-on assessment',
-          'Answer all your questions',
-          'Custom beauty roadmap',
-          '$30 credit towards any service booked',
-        ],
-        images: {
-          thumbnail: '/images/services/in-person-consultation-thumb.jpg',
-          hero: '/images/services/in-person-consultation-hero.jpg',
-          beforeAfter: [],
-        },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QOHU55QBGYWRMJUZB6QLGKRP',
-        featured: true,
-      },
-      {
         id: 'virtual-consultation',
-        name: 'Virtual Consultation',
+        name: 'Free Virtual Consultation',
         slug: 'virtual-consultation',
         category: 'consultations',
-        description: 'Expert skincare guidance from anywhere in the world via video call',
-        longDescription: 'Connect with Carmen from the comfort of your home, no matter where you are in the world. Our virtual consultations provide the same expert guidance and personalized care as an in-person visit. Through video call, we\'ll analyze your skin, discuss your concerns, and create a customized skincare plan that works for you. Perfect for busy schedules or international clients. Your $30 consultation fee can be applied towards any service you book.',
-        duration: '20 minutes',
-        price: '$30',
+        description: 'A free 15-minute call with Carmen to talk through your skin, your goals, and the right plan for you',
+        longDescription: 'Connect with Carmen directly by phone, wherever you are. In 15 minutes she\'ll talk through your skin concerns, your goals, and which treatments actually make sense for you — an honest recommendation, not a sales pitch. There is no charge and no obligation to book. Just call 469-664-9996 and ask for a consultation.',
+        duration: '15 minutes',
+        price: 'Free',
         benefits: [
-          'Accessible worldwide',
-          'Flexible scheduling',
-          'Virtual skin analysis',
-          'Personalized skincare plan',
-          'Product recommendations',
-          'Ongoing email support',
-          '$30 credit towards any service booked',
+          'Completely free — no charge, no obligation',
+          'Available worldwide by phone',
+          'Personalized treatment recommendations',
+          'Honest guidance on what you actually need',
+          'Ask any question before you commit',
+          'Bilingual — English & Spanish',
         ],
         images: {
           thumbnail: '/images/services/virtual-consultation-thumb.jpg',
           hero: '/images/services/virtual-consultation-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/TQ7J74GD4GQCBD2GXFPUYSTN',
+        bookingUrl: 'tel:+14696649996',
         featured: true,
       },
     ],
@@ -165,6 +147,7 @@ export const serviceCategories: ServiceCategory[] = [
         },
         imagePosition: 'object-top',
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
+        stripePaymentLink: 'https://buy.stripe.com/bJe7sLgRE5nb85X7N16sw06',
         featured: true,
       },
       {
@@ -224,6 +207,7 @@ export const serviceCategories: ServiceCategory[] = [
         },
         imagePosition: 'object-top',
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
+        stripePaymentLink: 'https://buy.stripe.com/28E8wPgRE02R9a1d7l6sw05',
         featured: true,
       },
       {
@@ -280,7 +264,8 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/butt-lift-6-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/ZTQLVSTHSXGWNUTEFAW327NR',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
+        stripePaymentLink: 'https://buy.stripe.com/bJecN58l8dTHeulgjx6sw04',
         featured: true,
       },
       {
@@ -337,7 +322,8 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/butt-lift-8-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
+        stripePaymentLink: 'https://buy.stripe.com/6oU7sL8l86rfbi99V96sw03',
         featured: true,
       },
       {
@@ -345,12 +331,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Lifting RF or Cryo Facial — 5 Sessions',
         slug: 'lifting-rf-cryo-facial-5-sessions',
         category: 'promotions-packages',
-        description: '5-session facial lifting package with Radiofrequency or Cryotherapy — save $126',
+        description: '5-session facial lifting package with Radiofrequency or Cryotherapy — save $125',
         longDescription: 'Elevate your skincare with our exclusive 5-session Lifting RF or Cryo Facial package. Choose the technology that best fits your skin goals — Radiofrequency for deep collagen stimulation and firming, or Cryotherapy for instant depuffing, soothing, and revitalization. With 5 progressive sessions, you\'ll experience cumulative, lasting improvements in skin tone, texture, elasticity, and radiance. Our expert will guide you on the best choice each visit, or mix both technologies for a fully personalized approach.',
         duration: '45 minutes per session',
-        price: '$499',
+        price: '$500',
         benefits: [
-          'Save $126 — premium package value',
+          'Save $125 — premium package value',
           '5 progressive sessions for lasting results',
           'RF: stimulates collagen production',
           'RF: improves skin elasticity and firmness',
@@ -400,7 +386,8 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/RF-Cryo-package-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/C6ST3GLLK7OMQFBOTAE2LFDS',
+        stripePaymentLink: 'https://buy.stripe.com/5kQ7sLeJw5nb3PH7N16sw02',
         featured: true,
       },
       {
@@ -426,6 +413,7 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/ZRORLMVVMDAAC2DCPUJCJJ3O',
+        stripePaymentLink: 'https://buy.stripe.com/00w8wP7h4dTHdqhc3h6sw01',
         featured: true,
       },
       {
@@ -451,6 +439,7 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/JSOOKGI6DOK5EGR3FAMIK7BC',
+        stripePaymentLink: 'https://buy.stripe.com/8x24gzeJwbLz71Tgjx6sw0e',
         featured: true,
       },
     ],
@@ -521,7 +510,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Signature cryo facial for instant lifting and tightening',
         longDescription: 'Our signature cryotherapy facial uses advanced cooling technology to deliver immediate tightening and lifting results. This innovative treatment constricts blood vessels and then dilates them, bringing fresh oxygen and nutrients to the skin while reducing inflammation, minimizing pores, and creating a sculpted, youthful appearance.',
         duration: '40 minutes',
-        price: '$120',
+        price: '$125',
         benefits: [
           'Instant skin tightening',
           'Reduces inflammation',
@@ -605,7 +594,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Advanced nano-needling for deep product penetration',
         longDescription: 'Experience the latest in skincare technology with our nano infusion facial. Using microscopic pyramid-shaped tips, this treatment creates tiny channels in the skin for maximum product penetration without pain or downtime. Delivers active ingredients deep into the skin for enhanced hydration, brightening, and anti-aging results.',
         duration: '1 hour 15 minutes',
-        price: '$220',
+        price: '$225',
         benefits: [
           'Deep product penetration',
           'No pain or downtime',
@@ -629,7 +618,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Luxury facial incorporating healing crystal therapy',
         longDescription: 'Indulge in the ultimate luxury with our Crystal Healing Facial. This unique treatment combines traditional facial techniques with the healing properties of crystals such as rose quartz, jade, and amethyst. Experience deep relaxation, improved circulation, reduced puffiness, and a radiant glow as the crystals work their natural magic on your skin.',
         duration: '1 hour',
-        price: '$150',
+        price: '$155',
         benefits: [
           'Deep relaxation and stress relief',
           'Improved lymphatic drainage',
@@ -701,7 +690,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Gentle chemical peel for skin renewal',
         longDescription: 'Refresh and renew your skin with our gentle micropeel facial. This treatment uses carefully selected acids to exfoliate the top layer of skin, revealing a brighter, smoother complexion underneath. Ideal for treating acne, hyperpigmentation, fine lines, and dull skin with minimal downtime.',
         duration: '1 hour',
-        price: '$150',
+        price: '$170',
         benefits: [
           'Gentle skin resurfacing',
           'Brightens complexion',
@@ -725,7 +714,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'SkinScript peel enhanced with LED light therapy',
         longDescription: 'Combine the transformative power of SkinScript professional peels with LED light therapy for enhanced results. This customized treatment addresses your specific skin concerns—whether acne, aging, hyperpigmentation, or sensitivity—while the LED therapy accelerates healing and boosts results.',
         duration: '1 hour',
-        price: '$150',
+        price: '$165',
         benefits: [
           'Customized to your skin',
           'Treats multiple concerns',
@@ -857,7 +846,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Exfoliating facial for brighter, smoother skin',
         longDescription: 'Refresh and renew with our peeling facial. This treatment uses gentle chemical exfoliation to remove dead skin cells, unclog pores, and reveal brighter, smoother skin underneath. Ideal for treating dullness, uneven texture, and mild discoloration while promoting cell turnover for a youthful glow.',
         duration: '1 hour',
-        price: '$130',
+        price: '$150',
         benefits: [
           'Removes dead skin cells',
           'Brightens complexion',
@@ -881,7 +870,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Gentle facial designed for young, acne-prone skin',
         longDescription: 'A gentle, educational facial designed specifically for teenage skin. This treatment focuses on proper cleansing techniques, gentle exfoliation, and acne prevention while teaching healthy skincare habits. Perfect for managing breakouts, controlling oil, and building confidence in young skin.',
         duration: '45 minutes',
-        price: '$80',
+        price: '$85',
         benefits: [
           'Gentle on young skin',
           'Controls oil and breakouts',
@@ -1058,14 +1047,14 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Body Contouring',
         slug: 'body-contouring',
         category: 'body-contouring-sculpting',
-        description: 'Comprehensive body sculpting treatment',
-        longDescription: 'Transform your body with our advanced body contouring treatment. Using state-of-the-art technology, we target stubborn fat deposits, tighten skin, and sculpt your desired silhouette. This customizable treatment can address multiple areas including abdomen, thighs, arms, and more for comprehensive body transformation.',
+        description: 'Targeted body sculpting for one area of your choice',
+        longDescription: 'Transform your body with our advanced body contouring treatment. Using state-of-the-art technology, we target stubborn fat deposits, tighten skin, and sculpt your desired silhouette. Each session focuses on one area of your choice — abdomen, thighs, arms, or flanks — for concentrated, visible results. Book additional sessions to cover more areas.',
         duration: '45 minutes',
-        price: '$250',
+        price: '$150',
         benefits: [
           'Targets stubborn fat',
           'Tightens and firms skin',
-          'Sculpts multiple areas',
+          'Focused on one area per session',
           'Non-invasive treatment',
           'No surgery or downtime',
           'Customized to your goals',
@@ -1075,7 +1064,7 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/body-contouring-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/K2UB6LNER5K3C2HUFLVJWNGQ',
       },
       {
         id: 'butt-lifting',
@@ -1128,41 +1117,8 @@ export const serviceCategories: ServiceCategory[] = [
     ],
   },
 
-  // CATEGORY 9: MASSAGE THERAPY
-  {
-    id: 'massage-therapy',
-    name: 'Massage Therapy',
-    slug: 'massage-therapy',
-    description: 'Professional therapeutic massage by Eleni Marin',
-    icon: '',
-    layoutType: 'grid',
-    services: [
-      {
-        id: 'massage-eleni-1h',
-        name: 'Massage by Eleni Marin - 1 Hour',
-        slug: 'massage-eleni-1h',
-        category: 'massage-therapy',
-        description: 'Full body therapeutic massage performed by expert therapist Eleni Marin',
-        longDescription: 'Relax and restore with a professional one-hour massage performed by our expert therapist, Eleni Marin. Using a combination of techniques tailored to your needs, Eleni addresses muscle tension, promotes circulation, and provides deep relaxation. Whether you need stress relief, pain management, or pure relaxation, this customized massage is designed for you.',
-        duration: '1 hour',
-        price: '$125',
-        benefits: [
-          'Relieves muscle tension',
-          'Reduces stress and anxiety',
-          'Improves circulation',
-          'Promotes deep relaxation',
-          'Customized to your needs',
-          'Expert therapist',
-        ],
-        images: {
-          thumbnail: '/images/services/massage-eleni-thumb.jpg',
-          hero: '/images/services/massage-eleni-hero.jpg',
-          beforeAfter: [],
-        },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/YTWW2B5NKQQBXEONLYZGCOKM',
-      },
-    ],
-  },
+  // CATEGORY 9: MASSAGE THERAPY — on hold while Eleni is on maternity leave.
+  // To bring it back, restore this category from git history.
 
   // CATEGORY 10: VIRTUAL FACE COACHING
   {

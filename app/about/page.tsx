@@ -3,6 +3,9 @@ import Link from 'next/link';
 import FeaturedTestimonials from '@/components/testimonials/FeaturedTestimonials';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/about',
+  },
   title: 'About Carmen Marin | Licensed Esthetician | Beauty Sanctuary',
   description: 'Meet Carmen Marin, a licensed esthetician with 6+ years of experience in advanced body contouring, facial rejuvenation, and personalized beauty treatments. Serving Euless, Texas and surrounding areas.',
   keywords: 'Carmen Marin, licensed esthetician, Euless Texas, body contouring, facial treatments, beauty sanctuary, advanced esthetics',
@@ -360,26 +363,24 @@ export default function AboutPage() {
               Ready to Start Your Transformation?
             </h2>
             <p className="text-lg text-light-secondary mb-8 max-w-2xl mx-auto">
-              Book your consultation today and discover personalized treatments designed
-              to help you look and feel your best.
+              Start with a free 15-minute call. Carmen will talk through your goals and
+              recommend the treatments that actually make sense for you — no charge, no pressure.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
-                href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QOHU55QBGYWRMJUZB6QLGKRP"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+14696649996"
                 className="inline-block bg-accent-rose text-dark-bg px-8 py-4 rounded-full font-semibold hover:bg-accent-rose/90 transition-all hover:scale-105"
               >
-                Book In-Person Consultation
+                Call for a Free Consultation
               </Link>
               <Link
-                href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/TQ7J74GD4GQCBD2GXFPUYSTN"
+                href="https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block border-2 border-accent-rose text-accent-rose px-8 py-4 rounded-full font-semibold hover:bg-accent-rose hover:text-dark-bg transition-all hover:scale-105"
               >
-                Schedule Virtual Consultation
+                Book an Appointment
               </Link>
             </div>
 

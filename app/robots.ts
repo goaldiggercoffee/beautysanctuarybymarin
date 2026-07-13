@@ -6,7 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/admin/'],
+        // Never block /_next/ — it serves the CSS, JS, and the image optimizer
+        // that every next/image goes through. Blocking it hides the site's
+        // styling and all images from Googlebot.
+        disallow: ['/api/', '/admin/'],
       },
     ],
     sitemap: 'https://beautysanctuarybymarin.com/sitemap.xml',

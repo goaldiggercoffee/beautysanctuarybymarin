@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PHONE_TEL, PHONE_DISPLAY } from '@/data/contact';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,9 +46,11 @@ const Header = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <h1 className="text-xl lg:text-2xl font-serif text-accent-primary group-hover:text-accent-hover transition-colors">
+              {/* Not an <h1>: this renders on every page, and each page needs its
+                  own single h1 describing that page, not the brand name. */}
+              <span className="block text-xl lg:text-2xl font-serif text-accent-primary group-hover:text-accent-hover transition-colors">
                 Beauty Sanctuary
-              </h1>
+              </span>
               <p className="text-xs lg:text-sm text-light-secondary -mt-1">
                 by Carmen Marin
               </p>
@@ -73,8 +76,21 @@ const Header = () => {
           {/* Spacer to push Book Now to the right */}
           <div className="flex-1 hidden lg:block" />
 
-          {/* Browse Services Button - FAR RIGHT */}
-          <div className="hidden lg:flex items-center flex-shrink-0">
+          {/* Call + Browse Services - FAR RIGHT */}
+          <div className="hidden lg:flex items-center flex-shrink-0 gap-5">
+            <a
+              href={PHONE_TEL}
+              className="flex items-center gap-2 text-sm font-medium text-light-secondary hover:text-accent-primary transition-colors whitespace-nowrap"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              {PHONE_DISPLAY}
+            </a>
             <Link
               href="/#services"
               className="px-6 py-2.5 bg-accent-primary text-gray-900 rounded-lg hover:bg-accent-hover transition-all hover:shadow-lg hover:shadow-accent-primary/20 font-semibold"

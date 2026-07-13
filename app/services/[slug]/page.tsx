@@ -25,19 +25,26 @@ export async function generateMetadata({ params }: ServicePageProps) {
     };
   }
 
-  // Generate location-optimized title and description
-  const locationKeywords = 'Euless TX | Arlington | Irving | DFW';
-  const serviceType = service.category.includes('facial') ? 'Facial' :
-                      service.category.includes('body') ? 'Body Contouring' :
-                      service.category.includes('massage') ? 'Massage' : 'Spa Service';
+  // Google truncates titles around 60 chars and descriptions around 155. The old
+  // template stacked four cities into the title and appended a 177-char boilerplate
+  // tail to the description, so the local keywords were always cut off before they
+  // rendered — we paid the duplicate-boilerplate cost and got none of the benefit.
+  // One city, and the useful text first.
+  // Keep the whole title under ~60 chars so Google shows it intact. Long service
+  // names drop the brand suffix rather than getting truncated mid-phrase.
+  const withBrand = `${service.name} | Euless, TX | Beauty Sanctuary`;
+  const title = withBrand.length <= 60 ? withBrand : `${service.name} | Euless, TX`;
+
+  const description = `${service.description} Book with licensed esthetician Carmen Marin in Euless, TX.`
+    .replace(/\s+/g, ' ')
+    .trim();
 
   return {
-    title: `${service.name} in ${locationKeywords} | Beauty Sanctuary`,
-    description: `${service.longDescription.substring(0, 140)}... Professional ${serviceType} serving Euless, Arlington, Irving, Grand Prairie, Fort Worth, Dallas & DFW metroplex. Book your appointment with licensed esthetician Carmen Marin today!`,
-    keywords: `${service.name}, ${serviceType} Euless TX, ${serviceType} Arlington, ${serviceType} Irving, ${serviceType} DFW, beauty spa Euless, Carmen Marin esthetician`,
+    title,
+    description: description.length > 155 ? `${description.slice(0, 152).trimEnd()}...` : description,
     openGraph: {
-      title: `${service.name} | Euless, TX & DFW Metroplex`,
-      description: `${service.description} - Serving Euless and the entire DFW area.`,
+      title: `${service.name} | Beauty Sanctuary, Euless TX`,
+      description: service.description,
       images: [service.images.hero],
       type: 'website',
     },

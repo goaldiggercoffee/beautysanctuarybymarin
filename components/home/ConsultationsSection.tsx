@@ -30,12 +30,15 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
             {category.description}
           </p>
           <p className="text-lg text-rosegold-600 font-medium">
-            Choose the option that works best for you
+            No charge, no commitment — just honest advice
           </p>
         </motion.div>
 
-        {/* Two Options Side by Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div
+          className={`grid grid-cols-1 gap-8 lg:gap-12 mx-auto ${
+            services.length > 1 ? 'lg:grid-cols-2 max-w-6xl' : 'max-w-xl'
+          }`}
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -58,7 +61,7 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
                   {/* Badge */}
                   <div className="absolute top-6 right-6 z-20">
                     <div className="bg-rosegold-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      {index === 0 ? 'In-Person' : 'Virtual'}
+                      {service.price === 'Free' ? 'Free' : 'Virtual'}
                     </div>
                   </div>
                 </div>
@@ -117,7 +120,7 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
                         {service.price}
                       </div>
                     </div>
-                    {index === 1 && (
+                    {service.id === 'virtual-consultation' && (
                       <div className="flex items-center text-sage-700 text-sm font-semibold">
                         <svg
                           className="w-5 h-5 mr-1"
@@ -141,9 +144,10 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
                   <BookingButton
                     bookingUrl={service.bookingUrl}
                     serviceName={service.name}
+                    label={service.price === 'Free' ? 'Call 469-664-9996' : undefined}
                     size="lg"
                     fullWidth
-                    variant={index === 0 ? 'primary' : 'secondary'}
+                    variant="primary"
                   />
                 </div>
               </div>
@@ -160,12 +164,12 @@ const ConsultationsSection = ({ category }: ConsultationsSectionProps) => {
           className="text-center mt-12"
         >
           <p className="text-gray-600 text-lg">
-            Not sure which option is right for you?{' '}
+            Prefer to reach out another way?{' '}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/#contact" className="text-rosegold-600 hover:text-rosegold-700 font-medium underline">
               Contact us
             </a>{' '}
-            and we&apos;ll help you choose.
+            and we&apos;ll get right back to you.
           </p>
         </motion.div>
       </div>

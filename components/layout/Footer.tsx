@@ -10,7 +10,6 @@ const Footer = () => {
     services: [
       { name: 'Body Contouring', href: '/#services' },
       { name: 'Facials', href: '/#services' },
-      { name: 'Massage Therapy', href: '/#services' },
       { name: 'Virtual Coaching', href: '/#services' },
     ],
     company: [
@@ -177,20 +176,8 @@ const Footer = () => {
               © {currentYear} Beauty Sanctuary by Carmen Marin. All rights
               reserved.
             </p>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy"
-                className="text-light-secondary hover:text-accent-rose transition-colors text-sm"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-light-secondary hover:text-accent-rose transition-colors text-sm"
-              >
-                Terms of Service
-              </Link>
-            </div>
+            {/* Privacy Policy / Terms links removed — /privacy and /terms don't exist
+                and were 404ing on every page. Restore them once the pages are written. */}
           </div>
         </div>
       </div>

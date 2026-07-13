@@ -440,3 +440,53 @@ export const getResultById = (id: string): Result | undefined => {
 export const getAllCategories = (): ResultCategory[] => {
   return Array.from(new Set(results.map(result => result.category)));
 };
+
+/**
+ * Which treatments in this gallery belong on which service page.
+ *
+ * The before/after photos are the strongest sales asset for the multi-session
+ * programs, so they need to appear on the page where the client decides — not
+ * only in the standalone gallery. Keyed by service slug (see data/services.ts).
+ * A service with no entry here simply shows no results section.
+ */
+const RESULTS_BY_SERVICE: Record<string, string[]> = {
+  // Body sculpting / slimming programs
+  'body-sculpting-4-sessions': ['Body Sculpting', 'Body Slimming', 'Body Contouring'],
+  '8-sessions-slimming': ['Body Sculpting', 'Body Slimming', 'Body Contouring'],
+  'body-contouring': ['Body Contouring', 'Body Sculpting', 'Body Slimming'],
+  'cryo-body': ['Body Slimming', 'Body Contouring'],
+
+  // Butt lifting
+  'butt-lifting-4-sessions': ['Butt Lifting', 'Butt Lifting (In Progress)'],
+  'butt-lifting-8-sessions': ['Butt Lifting', 'Butt Lifting (In Progress)'],
+  'butt-lifting': ['Butt Lifting', 'Butt Lifting (In Progress)'],
+
+  // Facial packages
+  'lifting-rf-cryo-facial-5-sessions': ['Cryo RF Anti-Aging Facial', 'Cryotherapy Facial', 'Cryo LED Facial'],
+  'cryo-led-series-5': ['Cryo LED Facial', 'LED Facial (In Progress)'],
+
+  // Chin / neck
+  'cryo-rf-chin-5-sessions': ['Cryo RF Chin Toning', 'Neck & Chin Reduction', 'Neck & Chin Treatment'],
+  'rf-chin-toning': ['RF Chin Toning (Side View)', 'Cryo RF Chin Toning'],
+  'cryotherapy-rf-chin': ['Cryo RF Chin Toning', 'Neck & Chin Treatment'],
+  'neck-chest-cryo': ['Neck & Chin Reduction', 'Neck & Chin Treatment'],
+
+  // Individual facials
+  'cryotherapy-facial': ['Cryotherapy Facial'],
+  'cryo-rf-face': ['Cryo RF Anti-Aging Facial', 'Face Lifting Anti-Aging'],
+  'cryo-face-eyes-lifting': ['Eye Lifting', 'Anti-Aging Eye Treatment'],
+  'cryo-led-therapy': ['Cryo LED Facial'],
+  'crystal-healing-facial': ['Crystal Healing Facial'],
+  'nano-infusion-facial': ['Nano Infusion Facial', 'ProPen Nano Infusion'],
+  'micro-nano-vitamins': ['Nano Pen Forehead Treatment', 'ProPen Nano Infusion'],
+  'deep-facial': ['Deep Cleansing Facial'],
+  'deep-facial-led-light': ['Deep Cleansing Facial', 'LED Facial (In Progress)'],
+  'deep-facial-mask-vitamins': ['Deep Cleansing Facial'],
+};
+
+/** Before/after images for a service page, newest-looking first. */
+export const getResultsForService = (slug: string): Result[] => {
+  const treatments = RESULTS_BY_SERVICE[slug];
+  if (!treatments) return [];
+  return results.filter(r => treatments.includes(r.treatment));
+};

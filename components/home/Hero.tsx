@@ -39,23 +39,25 @@ const Hero = () => {
             Welcome to
           </motion.p>
 
-          {/* Main Heading - LEFT ALIGNED */}
+          {/* Main Heading - LEFT ALIGNED.
+              The h1 carries the service + location keywords, not just the brand name —
+              it's the strongest on-page ranking signal for local search. */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif text-light-primary mb-4 leading-tight"
+            className="mb-8"
           >
-            Beauty Sanctuary
+            <span className="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif text-light-primary mb-4 leading-tight">
+              Beauty Sanctuary
+            </span>
+            <span className="block text-3xl sm:text-4xl lg:text-5xl font-serif text-accent-primary">
+              by Carmen Marin
+            </span>
+            <span className="block mt-4 text-base sm:text-lg lg:text-xl font-sans font-normal tracking-wide text-light-secondary">
+              Facials, Body Contouring &amp; Body Sculpting in Euless, TX
+            </span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif text-accent-primary mb-8"
-          >
-            by Carmen Marin
-          </motion.p>
 
           {/* Description - LEFT ALIGNED */}
           <motion.p

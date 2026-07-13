@@ -3,9 +3,13 @@ import "./globals.css";
 import PromoBanner from "@/components/promotions/PromoBanner";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CallTextBar from "@/components/ui/CallTextBar";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 
 export const metadata: Metadata = {
+  // Without this, Next resolves every og:image against http://localhost:3000,
+  // so social shares render a broken image.
+  metadataBase: new URL("https://beautysanctuarybymarin.com"),
   title: "Beauty Sanctuary | Facials, Body Contouring & Massage | Euless, TX | DFW Metroplex",
   description: "Premier beauty spa in Euless, TX offering anti-aging facials, body contouring, slimming treatments & massage therapy. Serving Arlington, Irving, Grand Prairie, Fort Worth, Dallas & DFW. Licensed esthetician Carmen Marin. Book now!",
   keywords: "facials Euless TX, body contouring Euless, massage therapy Euless, anti-aging treatments DFW, slimming treatments Arlington, beauty spa Irving, esthetician Grand Prairie, facial treatments Fort Worth, body sculpting Dallas, spa services DFW metroplex",
@@ -17,9 +21,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  alternates: {
-    canonical: "https://beautysanctuarybymarin.com",
-  },
+  // No canonical here on purpose: metadata is inherited, so a canonical set in the
+  // root layout would tell Google every page is a duplicate of the homepage.
+  // Each route declares its own.
   robots: {
     index: true,
     follow: true,
@@ -51,6 +55,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CallTextBar />
       </body>
     </html>
   );

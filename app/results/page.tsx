@@ -4,6 +4,9 @@ import { results } from '@/data/results';
 import ResultsGallery from '@/components/results/ResultsGallery';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/results',
+  },
   title: 'Results Gallery - Real Transformations | Beauty Sanctuary',
   description: 'View stunning before and after results from our body contouring, facial, and anti-aging treatments. Real transformations by Carmen Marin.',
   openGraph: {

@@ -30,7 +30,6 @@ export default function Home() {
   const classicFacials = serviceCategories.find(cat => cat.slug === 'classic-facials');
   const specializedBody = serviceCategories.find(cat => cat.slug === 'specialized-body-treatments');
   const bodyContouring = serviceCategories.find(cat => cat.slug === 'body-contouring-sculpting');
-  const massage = serviceCategories.find(cat => cat.slug === 'massage-therapy');
   const faceCoaching = serviceCategories.find(cat => cat.slug === 'virtual-face-coaching');
 
   return (
@@ -69,10 +68,7 @@ export default function Home() {
         {/* 7. BODY CONTOURING & SCULPTING */}
         {bodyContouring && <NetflixRow category={bodyContouring} />}
 
-        {/* 8. MASSAGE THERAPY */}
-        {massage && <NetflixRow category={massage} />}
-
-        {/* 9. VIRTUAL FACE COACHING */}
+        {/* 8. VIRTUAL FACE COACHING */}
         {faceCoaching && <NetflixRow category={faceCoaching} />}
       </div>
 

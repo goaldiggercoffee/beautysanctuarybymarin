@@ -5,6 +5,9 @@ import StarRating from '@/components/testimonials/StarRating';
 import { testimonials } from '@/data/testimonials';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/testimonials',
+  },
   title: 'Client Reviews & Testimonials | Beauty Sanctuary by Carmen Marin',
   description: '70+ five-star reviews from satisfied clients. Read real testimonials about body contouring, facial treatments, massage therapy, and more at Beauty Sanctuary in Euless, TX.',
   keywords: 'beauty sanctuary reviews, Carmen Marin testimonials, Euless esthetician reviews, body contouring results, facial treatment reviews, client testimonials',
