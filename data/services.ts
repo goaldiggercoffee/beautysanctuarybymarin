@@ -19,7 +19,7 @@ export interface Service {
    * Stripe Payment Link for the multi-session programs. Square Appointments does
    * not offer buy-now-pay-later at checkout, so financing runs through Stripe,
    * where Klarna / Affirm / Afterpay are enabled. Affirm is the one that matters
-   * here: it turns a $900 program into roughly $80/month.
+   * here: it turns a $999 program into roughly $83/month.
    *
    * These are plain hosted URLs — no API keys, no backend.
    */
@@ -95,12 +95,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Body Sculpting Program 4 Sessions',
         slug: 'body-sculpting-4-sessions',
         category: 'promotions-packages',
-        description: 'A focused 4-session body sculpting program to shape, define, and stay on track — save $150',
+        description: 'A focused 4-session body sculpting program to shape, define, and stay on track — save $110',
         longDescription: 'Commit to your transformation with our 4-session Body Sculpting Program. This focused program combines advanced non-invasive technologies tailored to your specific goals and body areas. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
         duration: '45 minutes per session',
-        price: '$500',
+        price: '$550',
         benefits: [
-          'Save $150 — exceptional package value',
+          'Save $110 — exceptional package value',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -155,12 +155,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Body Sculpting Program 8 Sessions',
         slug: '8-sessions-slimming',
         category: 'promotions-packages',
-        description: 'The most complete body sculpting program — 8 sessions for maximum transformation, saving $350',
+        description: 'The most complete body sculpting program — 8 sessions for maximum transformation, saving $321',
         longDescription: 'Commit to your transformation with our 8-session Body Sculpting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant results for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$900',
+        price: '$999',
         benefits: [
-          'Save $350 — best value for committed clients',
+          'Save $321 — best value for committed clients',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -215,12 +215,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Butt Lifting 4 Sessions',
         slug: 'butt-lifting-4-sessions',
         category: 'promotions-packages',
-        description: 'A focused 4-session butt lifting program to lift, tone, and sculpt for a more defined shape — save $150',
+        description: 'A focused 4-session butt lifting program to lift, tone, and sculpt for a more defined shape — save $110',
         longDescription: 'Commit to your transformation with our 4-session Butt Lifting Program. This focused program combines targeted non-invasive technologies to lift, tone, and sculpt the glutes for a more defined and elevated appearance. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
         duration: '45 minutes per session',
-        price: '$500',
+        price: '$550',
         benefits: [
-          'Save $150 — exceptional package value',
+          'Save $110 — exceptional package value',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -273,12 +273,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Butt Lifting 8 Sessions',
         slug: 'butt-lifting-8-sessions',
         category: 'promotions-packages',
-        description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt, saving $350',
+        description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt, saving $321',
         longDescription: 'Commit to your transformation with our 8-session Butt Lifting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant lift and sculpting for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$900',
+        price: '$999',
         benefits: [
-          'Save $350 — best value for committed clients',
+          'Save $321 — best value for committed clients',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -666,7 +666,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Diamond-tip exfoliation for smooth, renewed skin',
         longDescription: 'Reveal smoother, younger-looking skin with our professional microdermabrasion facial. Using diamond-tip technology, this treatment gently removes the outer layer of dead skin cells, stimulates collagen production, and improves the appearance of fine lines, sun damage, and uneven texture. Perfect for achieving a polished, radiant complexion.',
         duration: '1 hour',
-        price: '$140',
+        price: '$155',
         benefits: [
           'Deep exfoliation',
           'Reduces fine lines and wrinkles',
@@ -954,7 +954,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Combined cryo and RF for maximum chin sculpting',
         longDescription: 'Experience the ultimate chin contouring treatment combining cryotherapy and radiofrequency technology. This powerful duo reduces fat, tightens skin, and sculpts a defined jawline. The cryotherapy reduces inflammation and fat cells while RF tightens and lifts for dramatic, lasting results.',
         duration: '1 hour',
-        price: '$200',
+        price: '$250',
         benefits: [
           'Maximum chin sculpting',
           'Dual-technology approach',
@@ -978,7 +978,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Deep cleansing facial treatment for the back',
         longDescription: 'Treat hard-to-reach back acne and congestion with our specialized back facial. This treatment includes deep cleansing, exfoliation, extractions, and a purifying mask to clear breakouts, smooth texture, and prevent future blemishes. Perfect for anyone struggling with back acne or preparing for a special event.',
         duration: '1 hour 10 minutes',
-        price: '$150',
+        price: '$175',
         benefits: [
           'Clears back acne',
           'Deep pore cleansing',
@@ -1014,7 +1014,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Back facial treatment with enzyme exfoliation',
         longDescription: 'Give your back the same care as your face with our Bacial enzyme treatment. This specialized facial for the back includes deep cleansing, enzyme exfoliation, extractions, and a purifying mask to address back acne, congestion, and rough texture. Perfect before special events or as a regular skincare routine.',
         duration: '1 hour',
-        price: '$180',
+        price: '$195',
         benefits: [
           'Treats back acne',
           'Deep cleansing',
@@ -1050,7 +1050,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Targeted body sculpting for one area of your choice',
         longDescription: 'Transform your body with our advanced body contouring treatment. Using state-of-the-art technology, we target stubborn fat deposits, tighten skin, and sculpt your desired silhouette. Each session focuses on one area of your choice — abdomen, thighs, arms, or flanks — for concentrated, visible results. Book additional sessions to cover more areas.',
         duration: '45 minutes',
-        price: '$150',
+        price: '$165',
         benefits: [
           'Targets stubborn fat',
           'Tightens and firms skin',
@@ -1074,7 +1074,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Single session non-invasive butt lift and sculpting',
         longDescription: 'Enhance your curves with our non-invasive butt lifting treatment. This single session uses advanced technology to lift, shape, and contour for a more sculpted, toned appearance. Perfect for trying the treatment before committing to a package or as a maintenance session.',
         duration: '45 minutes',
-        price: '$150',
+        price: '$165',
         benefits: [
           'Lifts and shapes',
           'Non-invasive treatment',
