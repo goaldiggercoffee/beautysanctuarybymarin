@@ -6,6 +6,12 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Service removed from the catalog; send old links to the closest treatment
+[[redirects]]
+  from = "/services/circadia-enzyme-peel-led"
+  to = "/services/led-peel-skinscript"
+  status = 301
+
 # Headers for security and caching
 [[headers]]
   for = "/*"
