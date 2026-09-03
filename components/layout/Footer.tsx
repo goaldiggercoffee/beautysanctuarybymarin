@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import CancellationNotice from '@/components/ui/CancellationNotice';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -171,6 +172,9 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-accent-rose/20">
+          {/* Site-wide backstop for the booking policy, so it is disclosed on
+              every page and not only next to the Book Now buttons. */}
+          <CancellationNotice className="text-light-secondary/70 mb-6 max-w-xl mx-auto" />
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-light-secondary/80 text-sm">
               © {currentYear} Beauty Sanctuary by Carmen Marin. All rights

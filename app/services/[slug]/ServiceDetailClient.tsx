@@ -9,6 +9,7 @@ import { getResultsForService } from '@/data/results';
 import { smsAbout } from '@/data/contact';
 import SimpleImageGallery from '@/components/services/SimpleImageGallery';
 import BookingButton from '@/components/ui/BookingButton';
+import CancellationNotice from '@/components/ui/CancellationNotice';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 
 interface ServiceDetailClientProps {
@@ -350,7 +351,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                     serviceName={service.name}
                     size="lg"
                     fullWidth
-                    className={service.stripePaymentLink || isPhoneBooking ? 'mb-3' : 'mb-6'}
+                    className="mb-3"
                   />
 
                   {/* The free consultation is booked by phone, so offer texting too —
@@ -406,6 +407,12 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       </p>
                     </div>
                   )}
+
+                  {/* Cancellation policy — deliberately grouped with the booking
+                      CTAs so it is on screen at the moment of the decision, not
+                      buried on a terms page. Skipped for the free phone
+                      consultation, which carries no fee. */}
+                  {!isPhoneBooking && <CancellationNotice className="text-gray-500 mb-6" />}
 
                   {/* Additional Info */}
                   {/* beige-50 is #2A2A2A in this theme (the palette was inverted for
@@ -517,6 +524,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               size="lg"
               className="bg-white text-rosegold-600 hover:bg-cream-50 border-white"
             />
+            {!isPhoneBooking && (
+              <CancellationNotice className="text-white/80 mt-6 max-w-md mx-auto" />
+            )}
           </motion.div>
         </div>
       </section>
