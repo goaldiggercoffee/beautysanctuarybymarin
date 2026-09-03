@@ -19,7 +19,7 @@ export interface Service {
    * Stripe Payment Link for the multi-session programs. Square Appointments does
    * not offer buy-now-pay-later at checkout, so financing runs through Stripe,
    * where Klarna / Affirm / Afterpay are enabled. Affirm is the one that matters
-   * here: it turns a $999 program into roughly $83/month.
+   * here: it turns a $1050 program into roughly $88/month.
    *
    * These are plain hosted URLs — no API keys, no backend.
    */
@@ -155,12 +155,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Body Sculpting Program 8 Sessions',
         slug: '8-sessions-slimming',
         category: 'promotions-packages',
-        description: 'The most complete body sculpting program — 8 sessions for maximum transformation, saving $321',
+        description: 'The most complete body sculpting program — 8 sessions for maximum transformation, saving $270',
         longDescription: 'Commit to your transformation with our 8-session Body Sculpting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant results for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$999',
+        price: '$1050',
         benefits: [
-          'Save $321 — best value for committed clients',
+          'Save $270 — best value for committed clients',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -215,12 +215,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Butt Lifting 4 Sessions',
         slug: 'butt-lifting-4-sessions',
         category: 'promotions-packages',
-        description: 'A focused 4-session butt lifting program to lift, tone, and sculpt for a more defined shape — save $110',
+        description: 'A focused 4-session butt lifting program to lift, tone, and sculpt for a more defined shape — save $100',
         longDescription: 'Commit to your transformation with our 4-session Butt Lifting Program. This focused program combines targeted non-invasive technologies to lift, tone, and sculpt the glutes for a more defined and elevated appearance. Each session builds upon the last, with personalized treatment plans, daily nutrition coaching, and ongoing support to help you achieve real, lasting results.',
         duration: '45 minutes per session',
-        price: '$550',
+        price: '$500',
         benefits: [
-          'Save $110 — exceptional package value',
+          'Save $100 — exceptional package value',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -264,7 +264,7 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/butt-lift-6-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/P5EFTRXF75E7ZRKPK77XFLP6',
         stripePaymentLink: 'https://buy.stripe.com/bJecN58l8dTHeulgjx6sw04',
         featured: true,
       },
@@ -273,12 +273,12 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Butt Lifting 8 Sessions',
         slug: 'butt-lifting-8-sessions',
         category: 'promotions-packages',
-        description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt, saving $321',
+        description: 'The most complete butt lifting program — 8 sessions for maximum lift, tone, and sculpt, saving $250',
         longDescription: 'Commit to your transformation with our 8-session Butt Lifting Program — our most complete option. Eight progressive sessions designed to deliver deeper, more significant lift and sculpting for clients who are fully committed to their goals. Each session is customized to your body and progress, combining the most effective non-invasive technologies with personalized nutrition coaching and professional accountability.',
         duration: '45 minutes per session',
-        price: '$999',
+        price: '$950',
         benefits: [
-          'Save $321 — best value for committed clients',
+          'Save $250 — best value for committed clients',
           'Personalized initial evaluation',
           'Custom treatment plan per session',
           'Daily nutrition coaching',
@@ -322,7 +322,7 @@ export const serviceCategories: ServiceCategory[] = [
           hero: '/images/services/butt-lift-8-hero.jpg',
           beforeAfter: [],
         },
-        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
+        bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/MJPGEFIYZRNG2FLJEMS2AWTC',
         stripePaymentLink: 'https://buy.stripe.com/6oU7sL8l86rfbi99V96sw03',
         featured: true,
       },
@@ -750,7 +750,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Thorough deep-cleansing facial for all skin types',
         longDescription: 'Our signature deep facial provides comprehensive cleansing and rejuvenation for all skin types. This relaxing treatment includes deep cleansing, gentle exfoliation, extractions, massage, mask, and moisturizing. Perfect for maintaining healthy skin or addressing congestion, this facial leaves your complexion clear, balanced, and glowing.',
         duration: '50-55 minutes',
-        price: '$125-$150',
+        price: '$130',
         benefits: [
           'Deep cleansing and purification',
           'Gentle extractions',
@@ -1050,7 +1050,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Single session non-invasive butt lift and sculpting',
         longDescription: 'Enhance your curves with our non-invasive butt lifting treatment. This single session uses advanced technology to lift, shape, and contour for a more sculpted, toned appearance. Perfect for trying the treatment before committing to a package or as a maintenance session.',
         duration: '45 minutes',
-        price: '$165',
+        price: '$150',
         benefits: [
           'Lifts and shapes',
           'Non-invasive treatment',
