@@ -21,7 +21,7 @@ const getCurrentFacialsPromo = (): Promotion => {
       ],
       image: '/images/promotions/november-facial.jpg',
       ctaText: 'Book Package',
-      ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
+      ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/XFVNM3KQDVG63MJYACW5QLTA',
       badge: "MOTHER'S DAY",
     };
   }
@@ -32,13 +32,13 @@ const getCurrentFacialsPromo = (): Promotion => {
     title: 'Facial Membership Deal',
     description: 'Commit to your glow with our exclusive membership package. Three deep facials bundled for lasting results at an unbeatable members-only value.',
     details: [
-      '3 Deep Facials for $300',
-      'Save $75 — membership pricing',
+      '3 Deep Facials for $325',
+      'Save $65 — membership pricing',
       'Invest in your skin all year long',
     ],
     image: '/images/promotions/november-facial.jpg',
     ctaText: 'Book Package',
-    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/QUG4XYENNLXHKFEKPMXRKGLC',
+    ctaUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/XFVNM3KQDVG63MJYACW5QLTA',
     badge: 'MEMBERSHIP DEAL',
   };
 };
