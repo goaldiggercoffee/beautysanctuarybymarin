@@ -32,8 +32,8 @@ const getCurrentFacialsPromo = (): Promotion => {
     title: 'Facial Membership Deal',
     description: 'Commit to your glow with our exclusive membership package. Three deep facials bundled for lasting results at an unbeatable members-only value.',
     details: [
-      '3 Deep Facials for $325',
-      'Save $65 — membership pricing',
+      '3 Deep Facials for $350',
+      'Save $100 — membership pricing',
       'Invest in your skin all year long',
     ],
     image: '/images/promotions/november-facial.jpg',

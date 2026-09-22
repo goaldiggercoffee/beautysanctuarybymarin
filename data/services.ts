@@ -15,15 +15,6 @@ export interface Service {
     beforeAfter: string[]; // Array of combined before/after image paths
   };
   bookingUrl: string;
-  /**
-   * Stripe Payment Link for the multi-session programs. Square Appointments does
-   * not offer buy-now-pay-later at checkout, so financing runs through Stripe,
-   * where Klarna / Affirm / Afterpay are enabled. Affirm is the one that matters
-   * here: it turns a $1050 program into roughly $88/month.
-   *
-   * These are plain hosted URLs — no API keys, no backend.
-   */
-  stripePaymentLink?: string;
   featured?: boolean;
   imageFit?: 'cover' | 'contain'; // How to fit the thumbnail image in cards
   imagePosition?: string; // object-position for thumbnail, e.g. 'object-top', 'object-center'
@@ -147,7 +138,6 @@ export const serviceCategories: ServiceCategory[] = [
         },
         imagePosition: 'object-top',
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/3D334ARL6EH3ZXD3RHK5ZK3W',
-        stripePaymentLink: 'https://buy.stripe.com/bJe7sLgRE5nb85X7N16sw06',
         featured: true,
       },
       {
@@ -207,7 +197,6 @@ export const serviceCategories: ServiceCategory[] = [
         },
         imagePosition: 'object-top',
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/UVDUIW6LOX26LFPYHFSYSB7V',
-        stripePaymentLink: 'https://buy.stripe.com/28E8wPgRE02R9a1d7l6sw05',
         featured: true,
       },
       {
@@ -265,7 +254,6 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/P5EFTRXF75E7ZRKPK77XFLP6',
-        stripePaymentLink: 'https://buy.stripe.com/bJecN58l8dTHeulgjx6sw04',
         featured: true,
       },
       {
@@ -323,7 +311,6 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/MJPGEFIYZRNG2FLJEMS2AWTC',
-        stripePaymentLink: 'https://buy.stripe.com/6oU7sL8l86rfbi99V96sw03',
         featured: true,
       },
       {
@@ -387,7 +374,6 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/FFM6FQFVHMANQJP3SWKFSFPH',
-        stripePaymentLink: 'https://buy.stripe.com/5kQ7sLeJw5nb3PH7N16sw02',
         featured: true,
       },
       {
@@ -413,7 +399,6 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/ZRORLMVVMDAAC2DCPUJCJJ3O',
-        stripePaymentLink: 'https://buy.stripe.com/00w8wP7h4dTHdqhc3h6sw01',
         featured: true,
       },
       {
@@ -439,7 +424,6 @@ export const serviceCategories: ServiceCategory[] = [
           beforeAfter: [],
         },
         bookingUrl: 'https://book.squareup.com/appointments/8wjlenaylebqr2/location/992K09NSXT3W7/services/JSOOKGI6DOK5EGR3FAMIK7BC',
-        stripePaymentLink: 'https://buy.stripe.com/8x24gzeJwbLz71Tgjx6sw0e',
         featured: true,
       },
     ],
@@ -750,7 +734,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: 'Thorough deep-cleansing facial for all skin types',
         longDescription: 'Our signature deep facial provides comprehensive cleansing and rejuvenation for all skin types. This relaxing treatment includes deep cleansing, gentle exfoliation, extractions, massage, mask, and moisturizing. Perfect for maintaining healthy skin or addressing congestion, this facial leaves your complexion clear, balanced, and glowing.',
         duration: '50-55 minutes',
-        price: '$130',
+        price: '$150',
         benefits: [
           'Deep cleansing and purification',
           'Gentle extractions',

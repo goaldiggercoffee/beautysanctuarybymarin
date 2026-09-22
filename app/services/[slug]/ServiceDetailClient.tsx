@@ -338,11 +338,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                         {service.price}
                       </span>
                     </div>
-                    {service.stripePaymentLink && (
-                      <p className="text-xs text-rosegold-500 mt-1 text-right">
-                        Or pay monthly with Affirm, Klarna &amp; Afterpay
-                      </p>
-                    )}
                   </div>
 
                   {/* Booking Button */}
@@ -373,37 +368,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       </a>
                       <p className="text-xs text-gray-500 mt-2 text-center">
                         Prefer to text? We&apos;ll reply as soon as we can.
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Financing — only on the multi-session programs, which are the
-                      only services with a Stripe link behind them. */}
-                  {service.stripePaymentLink && (
-                    <div className="mb-6">
-                      <a
-                        href={service.stripePaymentLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center px-6 py-4 rounded-full border-2 border-rosegold-500 text-rosegold-600 font-medium hover:bg-rosegold-500 hover:text-white transition-all duration-300"
-                      >
-                        <span>Pay Over Time</span>
-                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                          />
-                        </svg>
-                      </a>
-                      <p className="text-xs text-gray-500 mt-2 text-center leading-relaxed">
-                        Split {service.price} into monthly payments with{' '}
-                        <span className="font-medium text-gray-700">Affirm</span>,{' '}
-                        <span className="font-medium text-gray-700">Klarna</span>, or{' '}
-                        <span className="font-medium text-gray-700">Afterpay</span>.
-                        <br />
-                        Checking your rate won&apos;t affect your credit score.
                       </p>
                     </div>
                   )}
